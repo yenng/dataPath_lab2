@@ -20,7 +20,8 @@ module dataPath_tb();
 		Input = {$random}%256;
 		Clock = 0;
 		Reset = 0;
-		
+		#2	Reset = 1;
+		#3	Reset = 0;
 		#10 IRload = 1;
 			PCload = 1;
 		#10 IRload = 0;
@@ -49,19 +50,16 @@ module dataPath_tb();
 	
 	always #5 Clock <= ~Clock;
 	//declare the reset
-	initial begin
+	/*initial begin
 		Reset <= 0;
 		@(posedge Clock)
 		@(negedge Clock) Reset <= 1;
-	end
+	end*/
 	
-	always@* begin
-		$display("Control Signal:");
-		$display("IRload = %d, JMPmux = %d, PCload = %d, Meminst = %d, MemWr = %d, Aload = %d, Sub = %d, Asel = %d", IRload, JMPmux, PCload, Meminst, MemWr, Aload, Sub, Asel);
-		$display("Status Signal:");
-		$display("IR = %d, Aeq0, Apos", IR, Aeq0, Apos);
-		$display("I/O:");
-		$display("Input = %d, Output = %d", Input, Output);
+	initial begin
+		$display("IRload	JMPmux	PCload	Meminst	MemWr	Aload	Sub	Asel	IR	Aeq0	Apos	Input	Output");
+		$monitor("%d		%d	%d	%d	%d	%d	%d	%d	%d	%d	%d	%d	%d	",
+		IRload, JMPmux, PCload, Meminst, MemWr, Aload, Sub, Asel,IR,Aeq0,Apos,Input,Output);
 	end
 		
 	

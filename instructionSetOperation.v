@@ -5,7 +5,7 @@ module instructionSetOperation(
 	output reg Aeq0, Apos,
 	output [7:0] Output);
 	
-	reg [7:0] muxOut1, muxOut2, subOut;
+	wire [7:0] muxOut1, muxOut2, subOut;
 	
 	multiplexer #(.data_size(8)) Asel_mux1(Asel[0:0],Input,subOut,muxOut1);
 	multiplexer #(.data_size(8)) Asel_mux2(Asel[1:1],Q,muxOut1,muxOut2);

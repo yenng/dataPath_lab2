@@ -1,0 +1,46 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 5.242 ns
+From           : Asel[1]
+To             : instructionSetOperation:part3|register:ARegister|out[4]
+From Clock     : --
+To Clock       : Clock
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 10.270 ns
+From           : instructionSetOperation:part3|register:ARegister|out[1]
+To             : Aeq0
+From Clock     : Clock
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -2.890 ns
+From           : Input[0]
+To             : instructionSetOperation:part3|register:ARegister|out[0]
+From Clock     : --
+To Clock       : Clock
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

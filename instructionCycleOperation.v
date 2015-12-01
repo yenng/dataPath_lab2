@@ -5,7 +5,7 @@ module instructionCycleOperation(
 	output [4:0] Address);
 	
 	wire [7:0] IR1;
-	wire [4:0] PC_in, PC,PC_increment;
+	wire [4:0] PC_in, PC, PC_increment;
 	
 	register #(.data_size(8)) eightBitsRegister(IRload, Clock, Reset, D, IR1);
 	multiplexer #(.data_size(5)) JMP_mux(JMPmux,IR1[4:0],PC_increment,PC_in);

@@ -59,4 +59,5 @@ set_global_assignment -name VERILOG_FILE multiplexer.v
 set_global_assignment -name VERILOG_FILE register.v
 set_global_assignment -name VERILOG_FILE register_tb.v
 set_global_assignment -name VERILOG_FILE sub.v
+set_global_assignment -name VERILOG_FILE instructionCycleOperation_tb.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -19,5 +19,392 @@ VHSM_ON
 -- End Library Paths --
 -- Start VHDL Libraries --
 -- End VHDL Libraries --
+# entity
+dataPath
+# storage
+db|dataPath.(0).cnf
+db|dataPath.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+datapath.v
+116585c0d298fe9d33786e7e4478e
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+register
+# storage
+db|dataPath.(2).cnf
+db|dataPath.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+register.v
+3b37a4fa973af841959ae86669324b
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+data_size
+8
+PARAMETER_SIGNED_DEC
+USR
+}
+# hierarchies {
+instructionCycleOperation:part1|register:eightBitsRegister
+instructionSetOperation:part3|register:ARegister
+}
+# macro_sequence
+
+# end
+# entity
+multiplexer
+# storage
+db|dataPath.(3).cnf
+db|dataPath.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+multiplexer.v
+9e2d58a7edc533191a593975b51aeaf
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+data_size
+5
+PARAMETER_SIGNED_DEC
+USR
+}
+# hierarchies {
+instructionCycleOperation:part1|multiplexer:JMP_mux
+instructionCycleOperation:part1|multiplexer:Meminst_mux
+}
+# macro_sequence
+
+# end
+# entity
+register
+# storage
+db|dataPath.(4).cnf
+db|dataPath.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+register.v
+3b37a4fa973af841959ae86669324b
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+data_size
+5
+PARAMETER_SIGNED_DEC
+USR
+}
+# hierarchies {
+instructionCycleOperation:part1|register:fiveBitsRegister
+}
+# macro_sequence
+
+# end
+# entity
+increment
+# storage
+db|dataPath.(5).cnf
+db|dataPath.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+increment.v
+6b9170cb961f617aac33939ed41fb9
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+instructionCycleOperation:part1|increment:pc_increment
+}
+# macro_sequence
+
+# end
+# entity
+memRAM
+# storage
+db|dataPath.(6).cnf
+db|dataPath.(6).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+memram.v
+10c2c768b33d3b25f1bdf181dc0e939
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+memRAM:part2
+}
+# macro_sequence
+
+# end
+# entity
+instructionSetOperation
+# storage
+db|dataPath.(7).cnf
+db|dataPath.(7).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+instructionsetoperation.v
+c2283e6a3f92e1e4346493975bd04e21
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+instructionSetOperation:part3
+}
+# macro_sequence
+
+# end
+# entity
+multiplexer
+# storage
+db|dataPath.(8).cnf
+db|dataPath.(8).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+multiplexer.v
+9e2d58a7edc533191a593975b51aeaf
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+data_size
+8
+PARAMETER_SIGNED_DEC
+USR
+}
+# hierarchies {
+instructionSetOperation:part3|multiplexer:Asel_mux1
+instructionSetOperation:part3|multiplexer:Asel_mux2
+}
+# macro_sequence
+
+# end
+# entity
+sub
+# storage
+db|dataPath.(9).cnf
+db|dataPath.(9).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+sub.v
+a5fea044f232abfbe851cf2fc883ac7d
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+instructionSetOperation:part3|sub:add_sub
+}
+# macro_sequence
+
+# end
+# entity
+instructionCycleOperation
+# storage
+db|dataPath.(1).cnf
+db|dataPath.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+instructioncycleoperation.v
+34e3a3afa9b8e79dd1c7577d921571
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+instructionCycleOperation:part1
+}
+# macro_sequence
+
+# end
 # complete
 

@@ -14,7 +14,7 @@ module instructionSetOperation(
 	
 	always@(Output) begin
 		if (Output == 0) Aeq0 = 1;
-		else Aeq = 0;
+		else Aeq0 = 0;
 		
 		if (Output[7:7] == 1) Apos = 0;
 		else Apos = 1;

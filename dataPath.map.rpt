@@ -1,5 +1,5 @@
 Analysis & Synthesis report for dataPath
-Tue Nov 24 18:12:29 2015
+Tue Dec 01 17:25:32 2015
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
 
 
@@ -10,8 +10,23 @@ Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
-  6. Analysis & Synthesis Suppressed Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: instructionCycleOperation:part1|register:eightBitsRegister
+ 13. Parameter Settings for User Entity Instance: instructionCycleOperation:part1|multiplexer:JMP_mux
+ 14. Parameter Settings for User Entity Instance: instructionCycleOperation:part1|register:fiveBitsRegister
+ 15. Parameter Settings for User Entity Instance: instructionCycleOperation:part1|multiplexer:Meminst_mux
+ 16. Parameter Settings for User Entity Instance: instructionSetOperation:part3|multiplexer:Asel_mux1
+ 17. Parameter Settings for User Entity Instance: instructionSetOperation:part3|multiplexer:Asel_mux2
+ 18. Parameter Settings for User Entity Instance: instructionSetOperation:part3|register:ARegister
+ 19. Port Connectivity Checks: "instructionSetOperation:part3|sub:add_sub"
+ 20. Analysis & Synthesis Messages
+ 21. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -37,20 +52,20 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +------------------------------------+-----------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Tue Nov 24 18:12:29 2015       ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec 01 17:25:32 2015   ;
 ; Quartus II Version                 ; 9.1 Build 222 10/21/2009 SJ Web Edition ;
 ; Revision Name                      ; dataPath                                ;
 ; Top-level Entity Name              ; dataPath                                ;
 ; Family                             ; Cyclone II                              ;
-; Total logic elements               ; N/A until Partition Merge               ;
-;     Total combinational functions  ; N/A until Partition Merge               ;
-;     Dedicated logic registers      ; N/A until Partition Merge               ;
-; Total registers                    ; N/A until Partition Merge               ;
-; Total pins                         ; N/A until Partition Merge               ;
-; Total virtual pins                 ; N/A until Partition Merge               ;
-; Total memory bits                  ; N/A until Partition Merge               ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge               ;
-; Total PLLs                         ; N/A until Partition Merge               ;
+; Total logic elements               ; 11                                      ;
+;     Total combinational functions  ; 11                                      ;
+;     Dedicated logic registers      ; 8                                       ;
+; Total registers                    ; 8                                       ;
+; Total pins                         ; 32                                      ;
+; Total virtual pins                 ; 0                                       ;
+; Total memory bits                  ; 0                                       ;
+; Embedded Multiplier 9-bit elements ; 0                                       ;
+; Total PLLs                         ; 0                                       ;
 +------------------------------------+-----------------------------------------+
 
 
@@ -144,13 +159,199 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                          ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                      ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------+
+; dataPath.v                       ; yes             ; User Verilog HDL File  ; C:/Users/Student/Desktop/yen/dataPath/dataPath.v                  ;
+; increment.v                      ; yes             ; User Verilog HDL File  ; C:/Users/Student/Desktop/yen/dataPath/increment.v                 ;
+; instructionCycleOperation.v      ; yes             ; User Verilog HDL File  ; C:/Users/Student/Desktop/yen/dataPath/instructionCycleOperation.v ;
+; instructionSetOperation.v        ; yes             ; User Verilog HDL File  ; C:/Users/Student/Desktop/yen/dataPath/instructionSetOperation.v   ;
+; memRam.v                         ; yes             ; User Verilog HDL File  ; C:/Users/Student/Desktop/yen/dataPath/memRam.v                    ;
+; multiplexer.v                    ; yes             ; User Verilog HDL File  ; C:/Users/Student/Desktop/yen/dataPath/multiplexer.v               ;
+; register.v                       ; yes             ; User Verilog HDL File  ; C:/Users/Student/Desktop/yen/dataPath/register.v                  ;
+; sub.v                            ; yes             ; User Verilog HDL File  ; C:/Users/Student/Desktop/yen/dataPath/sub.v                       ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary           ;
++---------------------------------------------+---------+
+; Resource                                    ; Usage   ;
++---------------------------------------------+---------+
+; Estimated Total logic elements              ; 11      ;
+;                                             ;         ;
+; Total combinational functions               ; 11      ;
+; Logic element usage by number of LUT inputs ;         ;
+;     -- 4 input functions                    ; 2       ;
+;     -- 3 input functions                    ; 8       ;
+;     -- <=2 input functions                  ; 1       ;
+;                                             ;         ;
+; Logic elements by mode                      ;         ;
+;     -- normal mode                          ; 11      ;
+;     -- arithmetic mode                      ; 0       ;
+;                                             ;         ;
+; Total registers                             ; 8       ;
+;     -- Dedicated logic registers            ; 8       ;
+;     -- I/O registers                        ; 0       ;
+;                                             ;         ;
+; I/O pins                                    ; 32      ;
+; Maximum fan-out node                        ; Asel[0] ;
+; Maximum fan-out                             ; 8       ;
+; Total fan-out                               ; 76      ;
+; Average fan-out                             ; 1.49    ;
++---------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                           ;
++------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                           ; Library Name ;
++------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------+--------------+
+; |dataPath                          ; 11 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 32   ; 0            ; |dataPath                                                     ; work         ;
+;    |instructionSetOperation:part3| ; 11 (3)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|instructionSetOperation:part3                       ; work         ;
+;       |multiplexer:Asel_mux2|      ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|instructionSetOperation:part3|multiplexer:Asel_mux2 ; work         ;
+;       |register:ARegister|         ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|instructionSetOperation:part3|register:ARegister    ; work         ;
++------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                            ;
++----------------------------------------------------------------------+----------------------------------------+
+; Register name                                                        ; Reason for Removal                     ;
++----------------------------------------------------------------------+----------------------------------------+
+; instructionCycleOperation:part1|register:eightBitsRegister|out[0..7] ; Stuck at GND due to stuck port data_in ;
+; memRAM:part2|Q[0..7]                                                 ; Stuck at GND due to stuck port data_in ;
+; instructionCycleOperation:part1|register:fiveBitsRegister|out[0..4]  ; Lost fanout                            ;
+; Total Number of Removed Registers = 21                               ;                                        ;
++----------------------------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                      ;
++-------------------------------------------------------------------+---------------------------+------------------------------------------------------------------+
+; Register name                                                     ; Reason for Removal        ; Registers Removed due to This Register                           ;
++-------------------------------------------------------------------+---------------------------+------------------------------------------------------------------+
+; instructionCycleOperation:part1|register:eightBitsRegister|out[4] ; Stuck at GND              ; instructionCycleOperation:part1|register:fiveBitsRegister|out[3] ;
+;                                                                   ; due to stuck port data_in ;                                                                  ;
+; instructionCycleOperation:part1|register:eightBitsRegister|out[3] ; Stuck at GND              ; instructionCycleOperation:part1|register:fiveBitsRegister|out[4] ;
+;                                                                   ; due to stuck port data_in ;                                                                  ;
++-------------------------------------------------------------------+---------------------------+------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 8     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 8     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 8     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |dataPath|instructionSetOperation:part3|register:ARegister|out[7] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: instructionCycleOperation:part1|register:eightBitsRegister ;
++----------------+-------+--------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                           ;
++----------------+-------+--------------------------------------------------------------------------------+
+; data_size      ; 8     ; Signed Integer                                                                 ;
++----------------+-------+--------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: instructionCycleOperation:part1|multiplexer:JMP_mux ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; data_size      ; 5     ; Signed Integer                                                          ;
++----------------+-------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: instructionCycleOperation:part1|register:fiveBitsRegister ;
++----------------+-------+-------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------+
+; data_size      ; 5     ; Signed Integer                                                                ;
++----------------+-------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: instructionCycleOperation:part1|multiplexer:Meminst_mux ;
++----------------+-------+-----------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                        ;
++----------------+-------+-----------------------------------------------------------------------------+
+; data_size      ; 5     ; Signed Integer                                                              ;
++----------------+-------+-----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: instructionSetOperation:part3|multiplexer:Asel_mux1 ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; data_size      ; 8     ; Signed Integer                                                          ;
++----------------+-------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: instructionSetOperation:part3|multiplexer:Asel_mux2 ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; data_size      ; 8     ; Signed Integer                                                          ;
++----------------+-------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: instructionSetOperation:part3|register:ARegister ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; data_size      ; 8     ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "instructionSetOperation:part3|sub:add_sub"                                                                             ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; Out  ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "Out[7..1]" have no fanouts ;
+; Out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                    ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
-    Info: Processing started: Tue Nov 24 18:12:28 2015
+    Info: Processing started: Tue Dec 01 17:25:31 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off dataPath -c dataPath
 Info: Found 1 design units, including 1 entities, in source file datapath.v
     Info: Found entity 1: dataPath
@@ -172,16 +373,57 @@ Info: Found 1 design units, including 1 entities, in source file register_tb.v
     Info: Found entity 1: register_tb
 Info: Found 1 design units, including 1 entities, in source file sub.v
     Info: Found entity 1: sub
+Info: Found 1 design units, including 1 entities, in source file instructioncycleoperation_tb.v
+    Info: Found entity 1: instructionCycleOperation_tb
 Warning (10236): Verilog HDL Implicit Net warning at instructionSetOperation.v(13): created implicit net for "SubOut"
 Info: Elaborating entity "dataPath" for the top level hierarchy
-Error (10663): Verilog HDL Port Connection error at dataPath.v(13): output or inout port "Q" must be connected to a structural net expression File: C:/Users/Student/Desktop/yen/dataPath/dataPath.v Line: 13
-Error: Can't elaborate top-level user hierarchy
+Info: Elaborating entity "instructionCycleOperation" for hierarchy "instructionCycleOperation:part1"
+Info: Elaborating entity "register" for hierarchy "instructionCycleOperation:part1|register:eightBitsRegister"
+Info: Elaborating entity "multiplexer" for hierarchy "instructionCycleOperation:part1|multiplexer:JMP_mux"
+Info: Elaborating entity "register" for hierarchy "instructionCycleOperation:part1|register:fiveBitsRegister"
+Info: Elaborating entity "increment" for hierarchy "instructionCycleOperation:part1|increment:pc_increment"
+Warning (10230): Verilog HDL assignment warning at increment.v(6): truncated value with size 32 to match size of target (5)
+Info: Elaborating entity "memRAM" for hierarchy "memRAM:part2"
+Info: Elaborating entity "instructionSetOperation" for hierarchy "instructionSetOperation:part3"
+Info: Elaborating entity "multiplexer" for hierarchy "instructionSetOperation:part3|multiplexer:Asel_mux1"
+Info: Elaborating entity "sub" for hierarchy "instructionSetOperation:part3|sub:add_sub"
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "RAM_D[7]" is missing source, defaulting to GND
+    Warning (12110): Net "RAM_D[6]" is missing source, defaulting to GND
+    Warning (12110): Net "RAM_D[5]" is missing source, defaulting to GND
+    Warning (12110): Net "RAM_D[4]" is missing source, defaulting to GND
+    Warning (12110): Net "RAM_D[3]" is missing source, defaulting to GND
+    Warning (12110): Net "RAM_D[2]" is missing source, defaulting to GND
+    Warning (12110): Net "RAM_D[1]" is missing source, defaulting to GND
+    Warning (12110): Net "RAM_D[0]" is missing source, defaulting to GND
+Warning: 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "IR[0]" is stuck at GND
+    Warning (13410): Pin "IR[1]" is stuck at GND
+    Warning (13410): Pin "IR[2]" is stuck at GND
+Info: 5 registers lost all their fanouts during netlist optimizations. The first 5 are displayed below.
+    Info: Register "instructionCycleOperation:part1|register:fiveBitsRegister|out[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "instructionCycleOperation:part1|register:fiveBitsRegister|out[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "instructionCycleOperation:part1|register:fiveBitsRegister|out[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "instructionCycleOperation:part1|register:fiveBitsRegister|out[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "instructionCycleOperation:part1|register:fiveBitsRegister|out[0]" lost all its fanouts during netlist optimizations.
 Info: Generated suppressed messages file C:/Users/Student/Desktop/yen/dataPath/dataPath.map.smsg
-Error: Quartus II Analysis & Synthesis was unsuccessful. 2 errors, 2 warnings
-    Error: Peak virtual memory: 192 megabytes
-    Error: Processing ended: Tue Nov 24 18:12:29 2015
-    Error: Elapsed time: 00:00:01
-    Error: Total CPU time (on all processors): 00:00:00
+Warning: Design contains 6 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "IRload"
+    Warning (15610): No output dependent on input pin "JMPmux"
+    Warning (15610): No output dependent on input pin "PCload"
+    Warning (15610): No output dependent on input pin "Meminst"
+    Warning (15610): No output dependent on input pin "MemWr"
+    Warning (15610): No output dependent on input pin "Sub"
+Info: Implemented 43 device resources after synthesis - the final resource count might be different
+    Info: Implemented 19 input pins
+    Info: Implemented 13 output pins
+    Info: Implemented 11 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 24 warnings
+    Info: Peak virtual memory: 198 megabytes
+    Info: Processing ended: Tue Dec 01 17:25:32 2015
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 
 +------------------------------------------+

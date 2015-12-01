@@ -7,7 +7,7 @@ module dataPath(
 	output [7:0] Output);
 	
 	reg [7:0] RAM_Q, RAM_D;
-	reg [4:0] Address;
+	wire [4:0] Address;
 		
 	instructionCycleOperation 	part1(IRload,JMPmux,PCload,Meminst,Clock,Reset,RAM_D,IR,Address);
 	memRAM						part2(Clock,RAM_D,Address,MemWr,RAM_Q);

@@ -1,7 +1,7 @@
 module register_tb();
 
 	reg load, clock, reset;
-	reg [2:0] IR;
+	wire [2:0] IR;
 	reg [4:0] IR1,D2;
 	reg [7:0] D1;
 	wire [4:0] Out2;
@@ -28,12 +28,13 @@ module register_tb();
 	
 	register #(.data_size(8)) eightBitsRegisterTest(load, clock, reset, D1, Out1);
 	register #(.data_size(5)) fiveBitsRegisterTest(load, clock, reset, D2, Out2);
-	
+	assign IR = Out1[7:5];
 	always@(Out1, Out2, load) begin
 		//if(load) begin
 		$display("Reset = %d ", reset);
 		$display("Load = %d, IR_D = %d, IR = %d ", load, D1, Out1);
 		$display("Load = %d, PC_D = %d, PC = %d ", load, D2, Out2);
+		$display("IR = %d ", IR);
 		//	if(Out1 == D1 && Out2 == D2)
 		//		$display("Correct! >~<");
 		//	else
