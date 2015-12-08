@@ -1,7 +1,7 @@
 module instructionSetOperation(
 	input Aload, Reset, Clock, Sub,
 	input [1:0] Asel,
-	input [7:0] Input, Q, D,
+	input [7:0] Input, Q,
 	output reg Aeq0, Apos,
 	output [7:0] Output);
 	

@@ -1,5 +1,5 @@
 Fitter report for dataPath
-Tue Dec 01 17:25:45 2015
+Tue Dec 08 18:19:41 2015
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
 
 
@@ -61,17 +61,17 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Fitter Summary                                                               ;
 +------------------------------------+-----------------------------------------+
-; Fitter Status                      ; Successful - Tue Dec 01 17:25:45 2015   ;
+; Fitter Status                      ; Successful - Tue Dec 08 18:19:41 2015   ;
 ; Quartus II Version                 ; 9.1 Build 222 10/21/2009 SJ Web Edition ;
 ; Revision Name                      ; dataPath                                ;
 ; Top-level Entity Name              ; dataPath                                ;
 ; Family                             ; Cyclone II                              ;
 ; Device                             ; EP2C20F484C7                            ;
 ; Timing Models                      ; Final                                   ;
-; Total logic elements               ; 11 / 18,752 ( < 1 % )                   ;
+; Total logic elements               ; 14 / 18,752 ( < 1 % )                   ;
 ;     Total combinational functions  ; 11 / 18,752 ( < 1 % )                   ;
-;     Dedicated logic registers      ; 8 / 18,752 ( < 1 % )                    ;
-; Total registers                    ; 8                                       ;
+;     Dedicated logic registers      ; 11 / 18,752 ( < 1 % )                   ;
+; Total registers                    ; 11                                      ;
 ; Total pins                         ; 32 / 315 ( 10 % )                       ;
 ; Total virtual pins                 ; 0                                       ;
 ; Total memory bits                  ; 0 / 239,616 ( 0 % )                     ;
@@ -150,8 +150,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                    ; Value              ;
 +-------------------------+--------------------+
 ; Placement               ;                    ;
-;     -- Requested        ; 0 / 57 ( 0.00 % )  ;
-;     -- Achieved         ; 0 / 57 ( 0.00 % )  ;
+;     -- Requested        ; 0 / 60 ( 0.00 % )  ;
+;     -- Achieved         ; 0 / 60 ( 0.00 % )  ;
 ;                         ;                    ;
 ; Routing (by Connection) ;                    ;
 ;     -- Requested        ; 0 / 0 ( 0.00 % )   ;
@@ -173,7 +173,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +----------------+---------+-------------------+-------------------------+-------------------+
-; Top            ; 57      ; 0                 ; N/A                     ; Source File       ;
+; Top            ; 60      ; 0                 ; N/A                     ; Source File       ;
 +----------------+---------+-------------------+-------------------------+-------------------+
 
 
@@ -188,23 +188,23 @@ The pin-out file can be found in C:/Users/Student/Desktop/yen/dataPath/dataPath.
 +---------------------------------------------+-----------------------+
 ; Resource                                    ; Usage                 ;
 +---------------------------------------------+-----------------------+
-; Total logic elements                        ; 11 / 18,752 ( < 1 % ) ;
+; Total logic elements                        ; 14 / 18,752 ( < 1 % ) ;
 ;     -- Combinational with no register       ; 3                     ;
-;     -- Register only                        ; 0                     ;
+;     -- Register only                        ; 3                     ;
 ;     -- Combinational with a register        ; 8                     ;
 ;                                             ;                       ;
 ; Logic element usage by number of LUT inputs ;                       ;
 ;     -- 4 input functions                    ; 2                     ;
 ;     -- 3 input functions                    ; 8                     ;
 ;     -- <=2 input functions                  ; 1                     ;
-;     -- Register only                        ; 0                     ;
+;     -- Register only                        ; 3                     ;
 ;                                             ;                       ;
 ; Logic elements by mode                      ;                       ;
 ;     -- normal mode                          ; 11                    ;
 ;     -- arithmetic mode                      ; 0                     ;
 ;                                             ;                       ;
-; Total registers*                            ; 8 / 19,649 ( < 1 % )  ;
-;     -- Dedicated logic registers            ; 8 / 18,752 ( < 1 % )  ;
+; Total registers*                            ; 11 / 19,649 ( < 1 % ) ;
+;     -- Dedicated logic registers            ; 11 / 18,752 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 897 ( 0 % )       ;
 ;                                             ;                       ;
 ; Total LABs:  partially or completely used   ; 1 / 1,172 ( < 1 % )   ;
@@ -224,12 +224,12 @@ The pin-out file can be found in C:/Users/Student/Desktop/yen/dataPath/dataPath.
 ; CRC blocks                                  ; 0 / 1 ( 0 % )         ;
 ; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%          ;
 ; Peak interconnect usage (total/H/V)         ; 0% / 0% / 0%          ;
-; Maximum fan-out node                        ; Asel[0]               ;
-; Maximum fan-out                             ; 8                     ;
+; Maximum fan-out node                        ; Clock~clkctrl         ;
+; Maximum fan-out                             ; 11                    ;
 ; Highest non-global fan-out signal           ; Asel[0]               ;
 ; Highest non-global fan-out                  ; 8                     ;
-; Total fan-out                               ; 78                    ;
-; Average fan-out                             ; 1.39                  ;
+; Total fan-out                               ; 96                    ;
+; Average fan-out                             ; 1.55                  ;
 +---------------------------------------------+-----------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -240,25 +240,25 @@ The pin-out file can be found in C:/Users/Student/Desktop/yen/dataPath/dataPath.
 +----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 ; Name     ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
 +----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
-; Aload    ; V20   ; 6        ; 50           ; 4            ; 1           ; 8                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Asel[0]  ; V19   ; 6        ; 50           ; 2            ; 2           ; 8                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Asel[1]  ; D22   ; 5        ; 50           ; 22           ; 2           ; 8                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Aload    ; U20   ; 6        ; 50           ; 5            ; 1           ; 8                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Asel[0]  ; W21   ; 6        ; 50           ; 4            ; 0           ; 8                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Asel[1]  ; W22   ; 6        ; 50           ; 5            ; 2           ; 8                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
 ; Clock    ; M1    ; 1        ; 0            ; 13           ; 2           ; 1                     ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; IRload   ; AB14  ; 7        ; 33           ; 0            ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Input[0] ; Y20   ; 6        ; 50           ; 3            ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Input[1] ; Y19   ; 6        ; 50           ; 2            ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Input[2] ; U18   ; 6        ; 50           ; 3            ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Input[3] ; W21   ; 6        ; 50           ; 4            ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Input[4] ; T18   ; 6        ; 50           ; 3            ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Input[5] ; U19   ; 6        ; 50           ; 4            ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Input[6] ; W22   ; 6        ; 50           ; 5            ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Input[7] ; U20   ; 6        ; 50           ; 5            ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; JMPmux   ; V21   ; 6        ; 50           ; 6            ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; MemWr    ; L8    ; 2        ; 0            ; 19           ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Meminst  ; U13   ; 7        ; 31           ; 0            ; 1           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; PCload   ; T12   ; 7        ; 31           ; 0            ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; IRload   ; Y21   ; 6        ; 50           ; 6            ; 2           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Input[0] ; R17   ; 6        ; 50           ; 5            ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Input[1] ; Y20   ; 6        ; 50           ; 3            ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Input[2] ; U19   ; 6        ; 50           ; 4            ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Input[3] ; U18   ; 6        ; 50           ; 3            ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Input[4] ; R19   ; 6        ; 50           ; 8            ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Input[5] ; U21   ; 6        ; 50           ; 7            ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Input[6] ; T18   ; 6        ; 50           ; 3            ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Input[7] ; V20   ; 6        ; 50           ; 4            ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; JMPmux   ; AB14  ; 7        ; 33           ; 0            ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; MemWr    ; Y19   ; 6        ; 50           ; 2            ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Meminst  ; T12   ; 7        ; 31           ; 0            ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; PCload   ; V21   ; 6        ; 50           ; 6            ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
 ; Reset    ; M2    ; 1        ; 0            ; 13           ; 3           ; 1                     ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Sub      ; AB12  ; 7        ; 29           ; 0            ; 3           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Sub      ; H5    ; 2        ; 0            ; 21           ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
 +----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 
 
@@ -267,19 +267,19 @@ The pin-out file can be found in C:/Users/Student/Desktop/yen/dataPath/dataPath.
 +-----------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
 ; Name      ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Output Enable Register ; Power Up High ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination ; Location assigned by ; Load ; Output Enable Source ; Output Enable Group ;
 +-----------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
-; Aeq0      ; U4    ; 1        ; 0            ; 2            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; Apos      ; H4    ; 2        ; 0            ; 21           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; IR[0]     ; F22   ; 5        ; 50           ; 20           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; IR[1]     ; E2    ; 2        ; 0            ; 20           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; IR[2]     ; AA6   ; 8        ; 7            ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; Output[0] ; A18   ; 4        ; 46           ; 27           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; Output[1] ; W3    ; 1        ; 0            ; 3            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; Output[2] ; Y22   ; 6        ; 50           ; 6            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; Output[3] ; AA19  ; 7        ; 48           ; 0            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; Output[4] ; U3    ; 1        ; 0            ; 5            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; Output[5] ; T3    ; 1        ; 0            ; 5            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; Output[6] ; Y21   ; 6        ; 50           ; 6            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; Output[7] ; N1    ; 1        ; 0            ; 12           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; Aeq0      ; U3    ; 1        ; 0            ; 5            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; Apos      ; F2    ; 2        ; 0            ; 20           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; IR[0]     ; A10   ; 3        ; 20           ; 27           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; IR[1]     ; T6    ; 1        ; 0            ; 5            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; IR[2]     ; Y1    ; 1        ; 0            ; 4            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; Output[0] ; Y2    ; 1        ; 0            ; 4            ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; Output[1] ; W2    ; 1        ; 0            ; 4            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; Output[2] ; W4    ; 1        ; 0            ; 3            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; Output[3] ; V2    ; 1        ; 0            ; 6            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; Output[4] ; AB10  ; 8        ; 22           ; 0            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; Output[5] ; L8    ; 2        ; 0            ; 19           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; Output[6] ; Y4    ; 1        ; 0            ; 3            ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; Output[7] ; U1    ; 1        ; 0            ; 7            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
 +-----------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
 
 
@@ -288,13 +288,13 @@ The pin-out file can be found in C:/Users/Student/Desktop/yen/dataPath/dataPath.
 +----------+------------------+---------------+--------------+
 ; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
 +----------+------------------+---------------+--------------+
-; 1        ; 7 / 41 ( 17 % )  ; 3.3V          ; --           ;
+; 1        ; 11 / 41 ( 27 % ) ; 3.3V          ; --           ;
 ; 2        ; 5 / 33 ( 15 % )  ; 3.3V          ; --           ;
-; 3        ; 0 / 43 ( 0 % )   ; 3.3V          ; --           ;
-; 4        ; 1 / 40 ( 3 % )   ; 3.3V          ; --           ;
-; 5        ; 2 / 39 ( 5 % )   ; 3.3V          ; --           ;
-; 6        ; 14 / 36 ( 39 % ) ; 3.3V          ; --           ;
-; 7        ; 5 / 40 ( 13 % )  ; 3.3V          ; --           ;
+; 3        ; 1 / 43 ( 2 % )   ; 3.3V          ; --           ;
+; 4        ; 0 / 40 ( 0 % )   ; 3.3V          ; --           ;
+; 5        ; 0 / 39 ( 0 % )   ; 3.3V          ; --           ;
+; 6        ; 15 / 36 ( 42 % ) ; 3.3V          ; --           ;
+; 7        ; 2 / 40 ( 5 % )   ; 3.3V          ; --           ;
 ; 8        ; 1 / 43 ( 2 % )   ; 3.3V          ; --           ;
 +----------+------------------+---------------+--------------+
 
@@ -313,7 +313,7 @@ The pin-out file can be found in C:/Users/Student/Desktop/yen/dataPath/dataPath.
 ; A7       ; 306        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A8       ; 304        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A9       ; 298        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; A10      ; 293        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; A10      ; 293        ; 3        ; IR[0]                                    ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; A11      ; 287        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A12      ; 283        ; 4        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; A13      ; 281        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -321,7 +321,7 @@ The pin-out file can be found in C:/Users/Student/Desktop/yen/dataPath/dataPath.
 ; A15      ; 273        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A16      ; 271        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A17      ; 265        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; A18      ; 251        ; 4        ; Output[0]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A18      ; 251        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A19      ; 249        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A20      ; 247        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A21      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
@@ -331,7 +331,7 @@ The pin-out file can be found in C:/Users/Student/Desktop/yen/dataPath/dataPath.
 ; AA3      ; 82         ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA4      ; 85         ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA5      ; 89         ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AA6      ; 97         ; 8        ; IR[2]                                    ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AA6      ; 97         ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA7      ; 103        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA8      ; 111        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA9      ; 114        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -344,7 +344,7 @@ The pin-out file can be found in C:/Users/Student/Desktop/yen/dataPath/dataPath.
 ; AA16     ; 140        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA17     ; 144        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA18     ; 153        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AA19     ; 162        ; 7        ; Output[3]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AA19     ; 162        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA20     ; 164        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA21     ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AA22     ;            ; 6        ; VCCIO6                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
@@ -357,11 +357,11 @@ The pin-out file can be found in C:/Users/Student/Desktop/yen/dataPath/dataPath.
 ; AB7      ; 102        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AB8      ; 110        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AB9      ; 113        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AB10     ; 119        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AB10     ; 119        ; 8        ; Output[4]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AB11     ; 121        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AB12     ; 127        ; 7        ; Sub                                      ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AB12     ; 127        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AB13     ; 129        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AB14     ; 135        ; 7        ; IRload                                   ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AB14     ; 135        ; 7        ; JMPmux                                   ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AB15     ; 137        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AB16     ; 139        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AB17     ; 143        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -435,9 +435,9 @@ The pin-out file can be found in C:/Users/Student/Desktop/yen/dataPath/dataPath.
 ; D19      ; 240        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; D20      ; 241        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; D21      ; 229        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; D22      ; 230        ; 5        ; Asel[1]                                  ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; D22      ; 230        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; E1       ; 20         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; E2       ; 21         ; 2        ; IR[1]                                    ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; E2       ; 21         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; E3       ; 6          ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; E4       ; 7          ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; E5       ;            ;          ; VCCD_PLL3                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
@@ -459,7 +459,7 @@ The pin-out file can be found in C:/Users/Student/Desktop/yen/dataPath/dataPath.
 ; E21      ; 227        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; E22      ; 228        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; F1       ; 22         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; F2       ; 23         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; F2       ; 23         ; 2        ; Apos                                     ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; F3       ; 13         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; F4       ; 10         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; F5       ;            ;          ; GND_PLL3                                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -479,7 +479,7 @@ The pin-out file can be found in C:/Users/Student/Desktop/yen/dataPath/dataPath.
 ; F19      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; F20      ; 235        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; F21      ; 223        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; F22      ; 224        ; 5        ; IR[0]                                    ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; F22      ; 224        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G1       ;            ;          ; NC                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; G2       ;            ;          ; NC                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; G3       ; 16         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -505,8 +505,8 @@ The pin-out file can be found in C:/Users/Student/Desktop/yen/dataPath/dataPath.
 ; H1       ; 24         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; H2       ; 25         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; H3       ; 27         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; H4       ; 17         ; 2        ; Apos                                     ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; H5       ; 18         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; H4       ; 17         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; H5       ; 18         ; 2        ; Sub                                      ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; H6       ; 19         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; H7       ; 318        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; H8       ; 314        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -575,7 +575,7 @@ The pin-out file can be found in C:/Users/Student/Desktop/yen/dataPath/dataPath.
 ; L5       ; 34         ; 2        ; #TDO                                     ; output ;              ;         ; --         ;                 ; --       ; --           ;
 ; L6       ; 35         ; 2        ; ^DCLK                                    ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; L7       ;            ;          ; NC                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
-; L8       ; 26         ; 2        ; MemWr                                    ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; L8       ; 26         ; 2        ; Output[5]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; L9       ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; L10      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; L11      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -612,7 +612,7 @@ The pin-out file can be found in C:/Users/Student/Desktop/yen/dataPath/dataPath.
 ; M20      ;            ; 6        ; VCCIO6                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; M21      ; 203        ; 6        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; M22      ; 204        ; 6        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
-; N1       ; 45         ; 1        ; Output[7]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; N1       ; 45         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; N2       ; 46         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; N3       ; 51         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; N4       ; 52         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -672,38 +672,38 @@ The pin-out file can be found in C:/Users/Student/Desktop/yen/dataPath/dataPath.
 ; R14      ; 150        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; R15      ; 151        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; R16      ; 155        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; R17      ; 177        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; R17      ; 177        ; 6        ; Input[0]                                 ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; R18      ; 184        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; R19      ; 185        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; R19      ; 185        ; 6        ; Input[4]                                 ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; R20      ; 192        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; R21      ; 190        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; R22      ; 191        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; T1       ; 59         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; T2       ; 60         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; T3       ; 69         ; 1        ; Output[5]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; T3       ; 69         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; T4       ;            ; 1        ; VCCIO1                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; T5       ; 67         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; T6       ; 68         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; T6       ; 68         ; 1        ; IR[1]                                    ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; T7       ; 91         ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; T8       ; 90         ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; T9       ;            ; 8        ; VCCIO8                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; T10      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; T11      ; 115        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; T12      ; 131        ; 7        ; PCload                                   ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; T12      ; 131        ; 7        ; Meminst                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; T13      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; T14      ;            ; 7        ; VCCIO7                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; T15      ; 147        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; T16      ; 156        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; T17      ;            ;          ; GND_PLL4                                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; T18      ; 171        ; 6        ; Input[4]                                 ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; T18      ; 171        ; 6        ; Input[6]                                 ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; T19      ;            ; 6        ; VCCIO6                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; T20      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; T21      ; 188        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; T22      ; 189        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; U1       ; 61         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; U1       ; 61         ; 1        ; Output[7]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; U2       ; 62         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; U3       ; 70         ; 1        ; Output[4]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; U4       ; 80         ; 1        ; Aeq0                                     ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; U3       ; 70         ; 1        ; Aeq0                                     ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; U4       ; 80         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; U5       ;            ;          ; GND_PLL1                                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; U6       ;            ;          ; VCCD_PLL1                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; U7       ;            ;          ; VCCA_PLL1                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
@@ -712,18 +712,18 @@ The pin-out file can be found in C:/Users/Student/Desktop/yen/dataPath/dataPath.
 ; U10      ; 107        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; U11      ; 123        ; 8        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; U12      ; 124        ; 8        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
-; U13      ; 132        ; 7        ; Meminst                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; U13      ; 132        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; U14      ; 146        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; U15      ; 157        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; U16      ;            ;          ; VCCA_PLL4                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; U17      ;            ;          ; VCCD_PLL4                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
-; U18      ; 170        ; 6        ; Input[2]                                 ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; U19      ; 172        ; 6        ; Input[5]                                 ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; U20      ; 176        ; 6        ; Input[7]                                 ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; U21      ; 182        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; U18      ; 170        ; 6        ; Input[3]                                 ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; U19      ; 172        ; 6        ; Input[2]                                 ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; U20      ; 176        ; 6        ; Aload                                    ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; U21      ; 182        ; 6        ; Input[5]                                 ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; U22      ; 183        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; V1       ; 65         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; V2       ; 66         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; V2       ; 66         ; 1        ; Output[3]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; V3       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; V4       ; 81         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; V5       ;            ;          ; GND_PLL1                                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -740,14 +740,14 @@ The pin-out file can be found in C:/Users/Student/Desktop/yen/dataPath/dataPath.
 ; V16      ;            ;          ; GNDA_PLL4                                ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; V17      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; V18      ;            ;          ; GND_PLL4                                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; V19      ; 166        ; 6        ; Asel[0]                                  ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; V20      ; 173        ; 6        ; Aload                                    ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; V21      ; 180        ; 6        ; JMPmux                                   ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; V19      ; 166        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; V20      ; 173        ; 6        ; Input[7]                                 ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; V21      ; 180        ; 6        ; PCload                                   ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; V22      ; 181        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; W1       ; 71         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; W2       ; 72         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; W3       ; 75         ; 1        ; Output[1]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; W4       ; 76         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; W2       ; 72         ; 1        ; Output[1]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; W3       ; 75         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; W4       ; 76         ; 1        ; Output[2]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; W5       ; 79         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; W6       ;            ; 8        ; VCCIO8                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; W7       ; 99         ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -764,12 +764,12 @@ The pin-out file can be found in C:/Users/Student/Desktop/yen/dataPath/dataPath.
 ; W18      ;            ;          ; NC                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; W19      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; W20      ; 167        ; 6        ; ~LVDS91p/nCEO~                           ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; W21      ; 174        ; 6        ; Input[3]                                 ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; W22      ; 175        ; 6        ; Input[6]                                 ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; Y1       ; 73         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; Y2       ; 74         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; W21      ; 174        ; 6        ; Asel[0]                                  ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; W22      ; 175        ; 6        ; Asel[1]                                  ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; Y1       ; 73         ; 1        ; IR[2]                                    ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; Y2       ; 74         ; 1        ; Output[0]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; Y3       ; 77         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; Y4       ; 78         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; Y4       ; 78         ; 1        ; Output[6]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; Y5       ; 86         ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; Y6       ; 87         ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; Y7       ; 93         ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -784,10 +784,10 @@ The pin-out file can be found in C:/Users/Student/Desktop/yen/dataPath/dataPath.
 ; Y16      ; 154        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; Y17      ; 159        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; Y18      ; 165        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; Y19      ; 168        ; 6        ; Input[1]                                 ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; Y20      ; 169        ; 6        ; Input[0]                                 ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; Y21      ; 178        ; 6        ; Output[6]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; Y22      ; 179        ; 6        ; Output[2]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; Y19      ; 168        ; 6        ; MemWr                                    ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; Y20      ; 169        ; 6        ; Input[1]                                 ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; Y21      ; 178        ; 6        ; IRload                                   ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; Y22      ; 179        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 +----------+------------+----------+------------------------------------------+--------+--------------+---------+------------+-----------------+----------+--------------+
 Note: Pin directions (input, output or bidir) are based on device operating in user mode.
 
@@ -829,16 +829,18 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                             ;
-+------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node         ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                           ; Library Name ;
-+------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------+--------------+
-; |dataPath                          ; 11 (0)      ; 8 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 32   ; 0            ; 3 (0)        ; 0 (0)             ; 8 (0)            ; |dataPath                                                     ; work         ;
-;    |instructionSetOperation:part3| ; 11 (3)      ; 8 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 8 (0)            ; |dataPath|instructionSetOperation:part3                       ; work         ;
-;       |multiplexer:Asel_mux2|      ; 8 (8)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |dataPath|instructionSetOperation:part3|multiplexer:Asel_mux2 ; work         ;
-;       |register:ARegister|         ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |dataPath|instructionSetOperation:part3|register:ARegister    ; work         ;
-+------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                      ;
++--------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node           ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                  ; Library Name ;
++--------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------+--------------+
+; |dataPath                            ; 14 (0)      ; 11 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 32   ; 0            ; 3 (0)        ; 3 (0)             ; 8 (0)            ; |dataPath                                                            ; work         ;
+;    |instructionCycleOperation:part1| ; 3 (0)       ; 3 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 3 (0)             ; 0 (0)            ; |dataPath|instructionCycleOperation:part1                            ;              ;
+;       |register:eightBitsRegister|   ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 3 (3)             ; 0 (0)            ; |dataPath|instructionCycleOperation:part1|register:eightBitsRegister ; work         ;
+;    |instructionSetOperation:part3|   ; 11 (3)      ; 8 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 8 (0)            ; |dataPath|instructionSetOperation:part3                              ; work         ;
+;       |multiplexer:Asel_mux2|        ; 8 (8)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |dataPath|instructionSetOperation:part3|multiplexer:Asel_mux2        ; work         ;
+;       |register:ARegister|           ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |dataPath|instructionSetOperation:part3|register:ARegister           ; work         ;
++--------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -847,12 +849,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------+----------+---------------+---------------+-----------------------+-----+
 ; Name      ; Pin Type ; Pad to Core 0 ; Pad to Core 1 ; Pad to Input Register ; TCO ;
 +-----------+----------+---------------+---------------+-----------------------+-----+
-; IRload    ; Input    ; (0) 312 ps    ; (0) 312 ps    ; --                    ; --  ;
-; JMPmux    ; Input    ; (0) 325 ps    ; (0) 325 ps    ; --                    ; --  ;
-; PCload    ; Input    ; (0) 312 ps    ; (0) 312 ps    ; --                    ; --  ;
+; JMPmux    ; Input    ; (0) 312 ps    ; (0) 312 ps    ; --                    ; --  ;
+; PCload    ; Input    ; (0) 325 ps    ; (0) 325 ps    ; --                    ; --  ;
 ; Meminst   ; Input    ; (0) 312 ps    ; (0) 312 ps    ; --                    ; --  ;
 ; MemWr     ; Input    ; (0) 325 ps    ; (0) 325 ps    ; --                    ; --  ;
-; Sub       ; Input    ; (0) 312 ps    ; (0) 312 ps    ; --                    ; --  ;
+; Sub       ; Input    ; (0) 325 ps    ; (0) 325 ps    ; --                    ; --  ;
 ; Aeq0      ; Output   ; --            ; --            ; --                    ; --  ;
 ; Apos      ; Output   ; --            ; --            ; --                    ; --  ;
 ; IR[0]     ; Output   ; --            ; --            ; --                    ; --  ;
@@ -879,77 +880,82 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Input[2]  ; Input    ; (6) 4358 ps   ; (6) 4358 ps   ; --                    ; --  ;
 ; Input[1]  ; Input    ; (6) 4358 ps   ; (6) 4358 ps   ; --                    ; --  ;
 ; Input[0]  ; Input    ; (6) 4358 ps   ; (6) 4358 ps   ; --                    ; --  ;
+; IRload    ; Input    ; (6) 4358 ps   ; (6) 4358 ps   ; --                    ; --  ;
 +-----------+----------+---------------+---------------+-----------------------+-----+
 
 
-+------------------------------------------------------------------------------------------------------+
-; Pad To Core Delay Chain Fanout                                                                       ;
-+------------------------------------------------------------------------+-------------------+---------+
-; Source Pin / Fanout                                                    ; Pad To Core Index ; Setting ;
-+------------------------------------------------------------------------+-------------------+---------+
-; IRload                                                                 ;                   ;         ;
-; JMPmux                                                                 ;                   ;         ;
-; PCload                                                                 ;                   ;         ;
-; Meminst                                                                ;                   ;         ;
-; MemWr                                                                  ;                   ;         ;
-; Sub                                                                    ;                   ;         ;
-; Input[7]                                                               ;                   ;         ;
-;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[7]~0 ; 0                 ; 6       ;
-; Asel[0]                                                                ;                   ;         ;
-;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[7]~0 ; 1                 ; 6       ;
-;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[6]~1 ; 1                 ; 6       ;
-;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[5]~2 ; 1                 ; 6       ;
-;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[4]~3 ; 1                 ; 6       ;
-;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[3]~4 ; 1                 ; 6       ;
-;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[2]~5 ; 1                 ; 6       ;
-;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[1]~6 ; 1                 ; 6       ;
-;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[0]~7 ; 1                 ; 6       ;
-; Asel[1]                                                                ;                   ;         ;
-;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[7]~0 ; 0                 ; 6       ;
-;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[6]~1 ; 0                 ; 6       ;
-;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[5]~2 ; 0                 ; 6       ;
-;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[4]~3 ; 0                 ; 6       ;
-;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[3]~4 ; 0                 ; 6       ;
-;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[2]~5 ; 0                 ; 6       ;
-;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[1]~6 ; 0                 ; 6       ;
-;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[0]~7 ; 0                 ; 6       ;
-; Clock                                                                  ;                   ;         ;
-; Reset                                                                  ;                   ;         ;
-; Aload                                                                  ;                   ;         ;
-;      - instructionSetOperation:part3|register:ARegister|out[7]         ; 1                 ; 6       ;
-;      - instructionSetOperation:part3|register:ARegister|out[6]         ; 1                 ; 6       ;
-;      - instructionSetOperation:part3|register:ARegister|out[5]         ; 1                 ; 6       ;
-;      - instructionSetOperation:part3|register:ARegister|out[4]         ; 1                 ; 6       ;
-;      - instructionSetOperation:part3|register:ARegister|out[3]         ; 1                 ; 6       ;
-;      - instructionSetOperation:part3|register:ARegister|out[2]         ; 1                 ; 6       ;
-;      - instructionSetOperation:part3|register:ARegister|out[1]         ; 1                 ; 6       ;
-;      - instructionSetOperation:part3|register:ARegister|out[0]         ; 1                 ; 6       ;
-; Input[6]                                                               ;                   ;         ;
-;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[6]~1 ; 1                 ; 6       ;
-; Input[5]                                                               ;                   ;         ;
-;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[5]~2 ; 0                 ; 6       ;
-; Input[4]                                                               ;                   ;         ;
-;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[4]~3 ; 0                 ; 6       ;
-; Input[3]                                                               ;                   ;         ;
-;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[3]~4 ; 0                 ; 6       ;
-; Input[2]                                                               ;                   ;         ;
-;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[2]~5 ; 1                 ; 6       ;
-; Input[1]                                                               ;                   ;         ;
-;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[1]~6 ; 1                 ; 6       ;
-; Input[0]                                                               ;                   ;         ;
-;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[0]~7 ; 1                 ; 6       ;
-+------------------------------------------------------------------------+-------------------+---------+
++--------------------------------------------------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                                                                         ;
++--------------------------------------------------------------------------+-------------------+---------+
+; Source Pin / Fanout                                                      ; Pad To Core Index ; Setting ;
++--------------------------------------------------------------------------+-------------------+---------+
+; JMPmux                                                                   ;                   ;         ;
+; PCload                                                                   ;                   ;         ;
+; Meminst                                                                  ;                   ;         ;
+; MemWr                                                                    ;                   ;         ;
+; Sub                                                                      ;                   ;         ;
+; Input[7]                                                                 ;                   ;         ;
+;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[7]~0   ; 1                 ; 6       ;
+; Asel[0]                                                                  ;                   ;         ;
+;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[7]~0   ; 1                 ; 6       ;
+;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[6]~1   ; 1                 ; 6       ;
+;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[5]~2   ; 1                 ; 6       ;
+;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[4]~3   ; 1                 ; 6       ;
+;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[3]~4   ; 1                 ; 6       ;
+;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[2]~5   ; 1                 ; 6       ;
+;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[1]~6   ; 1                 ; 6       ;
+;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[0]~7   ; 1                 ; 6       ;
+; Asel[1]                                                                  ;                   ;         ;
+;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[7]~0   ; 0                 ; 6       ;
+;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[6]~1   ; 0                 ; 6       ;
+;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[5]~2   ; 0                 ; 6       ;
+;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[4]~3   ; 0                 ; 6       ;
+;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[3]~4   ; 0                 ; 6       ;
+;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[2]~5   ; 0                 ; 6       ;
+;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[1]~6   ; 0                 ; 6       ;
+;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[0]~7   ; 0                 ; 6       ;
+; Clock                                                                    ;                   ;         ;
+; Reset                                                                    ;                   ;         ;
+; Aload                                                                    ;                   ;         ;
+;      - instructionSetOperation:part3|register:ARegister|out[7]           ; 0                 ; 6       ;
+;      - instructionSetOperation:part3|register:ARegister|out[6]           ; 0                 ; 6       ;
+;      - instructionSetOperation:part3|register:ARegister|out[5]           ; 0                 ; 6       ;
+;      - instructionSetOperation:part3|register:ARegister|out[4]           ; 0                 ; 6       ;
+;      - instructionSetOperation:part3|register:ARegister|out[3]           ; 0                 ; 6       ;
+;      - instructionSetOperation:part3|register:ARegister|out[2]           ; 0                 ; 6       ;
+;      - instructionSetOperation:part3|register:ARegister|out[1]           ; 0                 ; 6       ;
+;      - instructionSetOperation:part3|register:ARegister|out[0]           ; 0                 ; 6       ;
+; Input[6]                                                                 ;                   ;         ;
+;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[6]~1   ; 1                 ; 6       ;
+; Input[5]                                                                 ;                   ;         ;
+;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[5]~2   ; 1                 ; 6       ;
+; Input[4]                                                                 ;                   ;         ;
+;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[4]~3   ; 1                 ; 6       ;
+; Input[3]                                                                 ;                   ;         ;
+;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[3]~4   ; 1                 ; 6       ;
+; Input[2]                                                                 ;                   ;         ;
+;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[2]~5   ; 1                 ; 6       ;
+; Input[1]                                                                 ;                   ;         ;
+;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[1]~6   ; 0                 ; 6       ;
+; Input[0]                                                                 ;                   ;         ;
+;      - instructionSetOperation:part3|multiplexer:Asel_mux2|Output[0]~7   ; 0                 ; 6       ;
+; IRload                                                                   ;                   ;         ;
+;      - instructionCycleOperation:part1|register:eightBitsRegister|out[7] ; 0                 ; 6       ;
+;      - instructionCycleOperation:part1|register:eightBitsRegister|out[6] ; 0                 ; 6       ;
+;      - instructionCycleOperation:part1|register:eightBitsRegister|out[5] ; 0                 ; 6       ;
++--------------------------------------------------------------------------+-------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                          ;
-+-------+----------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Name  ; Location ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+-------+----------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Aload ; PIN_V20  ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; Clock ; PIN_M1   ; 8       ; Clock        ; yes    ; Global Clock         ; GCLK3            ; --                        ;
-; Reset ; PIN_M2   ; 8       ; Async. clear ; yes    ; Global Clock         ; GCLK1            ; --                        ;
-+-------+----------+---------+--------------+--------+----------------------+------------------+---------------------------+
++---------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                           ;
++--------+----------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; Name   ; Location ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++--------+----------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; Aload  ; PIN_U20  ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; Clock  ; PIN_M1   ; 11      ; Clock        ; yes    ; Global Clock         ; GCLK3            ; --                        ;
+; IRload ; PIN_Y21  ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; Reset  ; PIN_M2   ; 11      ; Async. clear ; yes    ; Global Clock         ; GCLK1            ; --                        ;
++--------+----------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
 +--------------------------------------------------------------------------------------------------+
@@ -957,69 +963,73 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------+----------+---------+----------------------+------------------+---------------------------+
 ; Name  ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-------+----------+---------+----------------------+------------------+---------------------------+
-; Clock ; PIN_M1   ; 8       ; Global Clock         ; GCLK3            ; --                        ;
-; Reset ; PIN_M2   ; 8       ; Global Clock         ; GCLK1            ; --                        ;
+; Clock ; PIN_M1   ; 11      ; Global Clock         ; GCLK3            ; --                        ;
+; Reset ; PIN_M2   ; 11      ; Global Clock         ; GCLK1            ; --                        ;
 +-------+----------+---------+----------------------+------------------+---------------------------+
 
 
-+---------------------------------------------------------------------------+
-; Non-Global High Fan-Out Signals                                           ;
-+-----------------------------------------------------------------+---------+
-; Name                                                            ; Fan-Out ;
-+-----------------------------------------------------------------+---------+
-; Aload                                                           ; 8       ;
-; Asel[1]                                                         ; 8       ;
-; Asel[0]                                                         ; 8       ;
-; instructionSetOperation:part3|register:ARegister|out[7]         ; 3       ;
-; instructionSetOperation:part3|register:ARegister|out[0]         ; 2       ;
-; instructionSetOperation:part3|register:ARegister|out[1]         ; 2       ;
-; instructionSetOperation:part3|register:ARegister|out[2]         ; 2       ;
-; instructionSetOperation:part3|register:ARegister|out[3]         ; 2       ;
-; instructionSetOperation:part3|register:ARegister|out[4]         ; 2       ;
-; instructionSetOperation:part3|register:ARegister|out[5]         ; 2       ;
-; instructionSetOperation:part3|register:ARegister|out[6]         ; 2       ;
-; Input[0]                                                        ; 1       ;
-; Input[1]                                                        ; 1       ;
-; Input[2]                                                        ; 1       ;
-; Input[3]                                                        ; 1       ;
-; Input[4]                                                        ; 1       ;
-; Input[5]                                                        ; 1       ;
-; Input[6]                                                        ; 1       ;
-; Input[7]                                                        ; 1       ;
-; instructionSetOperation:part3|multiplexer:Asel_mux2|Output[0]~7 ; 1       ;
-; instructionSetOperation:part3|multiplexer:Asel_mux2|Output[1]~6 ; 1       ;
-; instructionSetOperation:part3|multiplexer:Asel_mux2|Output[2]~5 ; 1       ;
-; instructionSetOperation:part3|multiplexer:Asel_mux2|Output[3]~4 ; 1       ;
-; instructionSetOperation:part3|multiplexer:Asel_mux2|Output[4]~3 ; 1       ;
-; instructionSetOperation:part3|multiplexer:Asel_mux2|Output[5]~2 ; 1       ;
-; instructionSetOperation:part3|multiplexer:Asel_mux2|Output[6]~1 ; 1       ;
-; instructionSetOperation:part3|multiplexer:Asel_mux2|Output[7]~0 ; 1       ;
-; instructionSetOperation:part3|Equal0~2                          ; 1       ;
-; instructionSetOperation:part3|Equal0~1                          ; 1       ;
-; instructionSetOperation:part3|Equal0~0                          ; 1       ;
-+-----------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------+
+; Non-Global High Fan-Out Signals                                             ;
++-------------------------------------------------------------------+---------+
+; Name                                                              ; Fan-Out ;
++-------------------------------------------------------------------+---------+
+; Aload                                                             ; 8       ;
+; Asel[1]                                                           ; 8       ;
+; Asel[0]                                                           ; 8       ;
+; instructionSetOperation:part3|register:ARegister|out[7]           ; 4       ;
+; IRload                                                            ; 3       ;
+; instructionSetOperation:part3|register:ARegister|out[5]           ; 3       ;
+; instructionSetOperation:part3|register:ARegister|out[6]           ; 3       ;
+; instructionSetOperation:part3|register:ARegister|out[0]           ; 2       ;
+; instructionSetOperation:part3|register:ARegister|out[1]           ; 2       ;
+; instructionSetOperation:part3|register:ARegister|out[2]           ; 2       ;
+; instructionSetOperation:part3|register:ARegister|out[3]           ; 2       ;
+; instructionSetOperation:part3|register:ARegister|out[4]           ; 2       ;
+; Input[0]                                                          ; 1       ;
+; Input[1]                                                          ; 1       ;
+; Input[2]                                                          ; 1       ;
+; Input[3]                                                          ; 1       ;
+; Input[4]                                                          ; 1       ;
+; Input[5]                                                          ; 1       ;
+; Input[6]                                                          ; 1       ;
+; Input[7]                                                          ; 1       ;
+; instructionSetOperation:part3|multiplexer:Asel_mux2|Output[0]~7   ; 1       ;
+; instructionSetOperation:part3|multiplexer:Asel_mux2|Output[1]~6   ; 1       ;
+; instructionSetOperation:part3|multiplexer:Asel_mux2|Output[2]~5   ; 1       ;
+; instructionSetOperation:part3|multiplexer:Asel_mux2|Output[3]~4   ; 1       ;
+; instructionSetOperation:part3|multiplexer:Asel_mux2|Output[4]~3   ; 1       ;
+; instructionSetOperation:part3|multiplexer:Asel_mux2|Output[5]~2   ; 1       ;
+; instructionSetOperation:part3|multiplexer:Asel_mux2|Output[6]~1   ; 1       ;
+; instructionSetOperation:part3|multiplexer:Asel_mux2|Output[7]~0   ; 1       ;
+; instructionCycleOperation:part1|register:eightBitsRegister|out[7] ; 1       ;
+; instructionCycleOperation:part1|register:eightBitsRegister|out[6] ; 1       ;
+; instructionCycleOperation:part1|register:eightBitsRegister|out[5] ; 1       ;
+; instructionSetOperation:part3|Equal0~2                            ; 1       ;
+; instructionSetOperation:part3|Equal0~1                            ; 1       ;
+; instructionSetOperation:part3|Equal0~0                            ; 1       ;
++-------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------+
-; Interconnect Usage Summary                         ;
-+----------------------------+-----------------------+
-; Interconnect Resource Type ; Usage                 ;
-+----------------------------+-----------------------+
-; Block interconnects        ; 21 / 54,004 ( < 1 % ) ;
-; C16 interconnects          ; 1 / 2,100 ( < 1 % )   ;
-; C4 interconnects           ; 27 / 36,000 ( < 1 % ) ;
-; Direct links               ; 0 / 54,004 ( 0 % )    ;
-; Global clocks              ; 2 / 16 ( 13 % )       ;
-; Local interconnects        ; 10 / 18,752 ( < 1 % ) ;
-; R24 interconnects          ; 8 / 1,900 ( < 1 % )   ;
-; R4 interconnects           ; 23 / 46,920 ( < 1 % ) ;
-+----------------------------+-----------------------+
++-----------------------------------------------------+
+; Interconnect Usage Summary                          ;
++----------------------------+------------------------+
+; Interconnect Resource Type ; Usage                  ;
++----------------------------+------------------------+
+; Block interconnects        ; 27 / 54,004 ( < 1 % )  ;
+; C16 interconnects          ; 5 / 2,100 ( < 1 % )    ;
+; C4 interconnects           ; 29 / 36,000 ( < 1 % )  ;
+; Direct links               ; 2 / 54,004 ( < 1 % )   ;
+; Global clocks              ; 2 / 16 ( 13 % )        ;
+; Local interconnects        ; 10 / 18,752 ( < 1 % )  ;
+; R24 interconnects          ; 13 / 1,900 ( < 1 % )   ;
+; R4 interconnects           ; 101 / 46,920 ( < 1 % ) ;
++----------------------------+------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Logic Elements                                                        ;
 +---------------------------------------------+-----------------------------+
-; Number of Logic Elements  (Average = 11.00) ; Number of LABs  (Total = 1) ;
+; Number of Logic Elements  (Average = 14.00) ; Number of LABs  (Total = 1) ;
 +---------------------------------------------+-----------------------------+
 ; 1                                           ; 0                           ;
 ; 2                                           ; 0                           ;
@@ -1031,10 +1041,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 8                                           ; 0                           ;
 ; 9                                           ; 0                           ;
 ; 10                                          ; 0                           ;
-; 11                                          ; 1                           ;
+; 11                                          ; 0                           ;
 ; 12                                          ; 0                           ;
 ; 13                                          ; 0                           ;
-; 14                                          ; 0                           ;
+; 14                                          ; 1                           ;
 ; 15                                          ; 0                           ;
 ; 16                                          ; 0                           ;
 +---------------------------------------------+-----------------------------+
@@ -1047,14 +1057,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------+-----------------------------+
 ; 1 Async. clear                     ; 1                           ;
 ; 1 Clock                            ; 1                           ;
-; 1 Clock enable                     ; 1                           ;
+; 2 Clock enables                    ; 1                           ;
 +------------------------------------+-----------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                        ;
 +----------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 19.00) ; Number of LABs  (Total = 1) ;
+; Number of Signals Sourced  (Average = 25.00) ; Number of LABs  (Total = 1) ;
 +----------------------------------------------+-----------------------------+
 ; 0                                            ; 0                           ;
 ; 1                                            ; 0                           ;
@@ -1075,32 +1085,41 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 16                                           ; 0                           ;
 ; 17                                           ; 0                           ;
 ; 18                                           ; 0                           ;
-; 19                                           ; 1                           ;
+; 19                                           ; 0                           ;
+; 20                                           ; 0                           ;
+; 21                                           ; 0                           ;
+; 22                                           ; 0                           ;
+; 23                                           ; 0                           ;
+; 24                                           ; 0                           ;
+; 25                                           ; 1                           ;
 +----------------------------------------------+-----------------------------+
 
 
-+-------------------------------------------------------------------------------+
-; LAB Signals Sourced Out                                                       ;
-+-------------------------------------------------+-----------------------------+
-; Number of Signals Sourced Out  (Average = 9.00) ; Number of LABs  (Total = 1) ;
-+-------------------------------------------------+-----------------------------+
-; 0                                               ; 0                           ;
-; 1                                               ; 0                           ;
-; 2                                               ; 0                           ;
-; 3                                               ; 0                           ;
-; 4                                               ; 0                           ;
-; 5                                               ; 0                           ;
-; 6                                               ; 0                           ;
-; 7                                               ; 0                           ;
-; 8                                               ; 0                           ;
-; 9                                               ; 1                           ;
-+-------------------------------------------------+-----------------------------+
++--------------------------------------------------------------------------------+
+; LAB Signals Sourced Out                                                        ;
++--------------------------------------------------+-----------------------------+
+; Number of Signals Sourced Out  (Average = 12.00) ; Number of LABs  (Total = 1) ;
++--------------------------------------------------+-----------------------------+
+; 0                                                ; 0                           ;
+; 1                                                ; 0                           ;
+; 2                                                ; 0                           ;
+; 3                                                ; 0                           ;
+; 4                                                ; 0                           ;
+; 5                                                ; 0                           ;
+; 6                                                ; 0                           ;
+; 7                                                ; 0                           ;
+; 8                                                ; 0                           ;
+; 9                                                ; 0                           ;
+; 10                                               ; 0                           ;
+; 11                                               ; 0                           ;
+; 12                                               ; 1                           ;
++--------------------------------------------------+-----------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                        ;
 +----------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 13.00) ; Number of LABs  (Total = 1) ;
+; Number of Distinct Inputs  (Average = 14.00) ; Number of LABs  (Total = 1) ;
 +----------------------------------------------+-----------------------------+
 ; 0                                            ; 0                           ;
 ; 1                                            ; 0                           ;
@@ -1115,7 +1134,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 10                                           ; 0                           ;
 ; 11                                           ; 0                           ;
 ; 12                                           ; 0                           ;
-; 13                                           ; 1                           ;
+; 13                                           ; 0                           ;
+; 14                                           ; 1                           ;
 +----------------------------------------------+-----------------------------+
 
 
@@ -1161,7 +1181,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II Fitter
     Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
-    Info: Processing started: Tue Dec 01 17:25:43 2015
+    Info: Processing started: Tue Dec 08 18:19:39 2015
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off dataPath -c dataPath
 Info: Selected device EP2C20F484C7 for design "dataPath"
 Info: Low junction temperature is 0 degrees C
@@ -1177,7 +1197,6 @@ Info: Fitter converted 3 user pins into dedicated programming pins
     Info: Pin ~nCSO~ is reserved at location C3
     Info: Pin ~LVDS91p/nCEO~ is reserved at location W20
 Critical Warning: No exact pin location assignment(s) for 32 pins of 32 total pins
-    Info: Pin IRload not assigned to an exact location on the device
     Info: Pin JMPmux not assigned to an exact location on the device
     Info: Pin PCload not assigned to an exact location on the device
     Info: Pin Meminst not assigned to an exact location on the device
@@ -1209,6 +1228,7 @@ Critical Warning: No exact pin location assignment(s) for 32 pins of 32 total pi
     Info: Pin Input[2] not assigned to an exact location on the device
     Info: Pin Input[1] not assigned to an exact location on the device
     Info: Pin Input[0] not assigned to an exact location on the device
+    Info: Pin IRload not assigned to an exact location on the device
 Info: Timing-driven compilation is using the Classic Timing Analyzer
 Info: Timing requirements not specified -- quality metrics such as performance and power consumption may be sacrificed to reduce compilation time.
 Info: Automatically promoted node Clock (placed in PIN M1 (CLK2, LVDSCLK1p, Input))
@@ -1243,6 +1263,11 @@ Info: Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement operations beginning
 Info: Fitter placement was successful
 Info: Fitter placement operations ending: elapsed time is 00:00:00
+Info: Estimated most critical path is register to register delay of 0.630 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LAB_X47_Y4; Fanout = 3; REG Node = 'instructionSetOperation:part3|register:ARegister|out[5]'
+    Info: 2: + IC(0.534 ns) + CELL(0.096 ns) = 0.630 ns; Loc. = LAB_X47_Y4; Fanout = 1; REG Node = 'instructionCycleOperation:part1|register:eightBitsRegister|out[5]'
+    Info: Total cell delay = 0.096 ns ( 15.24 % )
+    Info: Total interconnect delay = 0.534 ns ( 84.76 % )
 Info: Fitter routing operations beginning
 Info: Average interconnect usage is 0% of the available device resources
     Info: Peak interconnect usage is 0% of the available device resources in the region that extends from location X38_Y0 to location X50_Y13
@@ -1269,7 +1294,7 @@ Info: Delay annotation completed successfully
 Warning: The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info: Quartus II Fitter was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 234 megabytes
-    Info: Processing ended: Tue Dec 01 17:25:45 2015
+    Info: Processing ended: Tue Dec 08 18:19:41 2015
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:03
 

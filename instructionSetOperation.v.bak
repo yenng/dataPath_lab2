@@ -1,11 +1,11 @@
 module instructionSetOperation(
 	input Aload, Reset, Clock, Sub,
 	input [1:0] Asel,
-	input [7:0] Input, Q, D,
+	input [7:0] Input, Q,
 	output reg Aeq0, Apos,
-	output [7:0] Output);
+	output [7:0] Output, D);
 	
-	reg [7:0] muxOut1, muxOut2, subOut;
+	wire [7:0] muxOut1, muxOut2, subOut;
 	
 	multiplexer #(.data_size(8)) Asel_mux1(Asel[0:0],Input,subOut,muxOut1);
 	multiplexer #(.data_size(8)) Asel_mux2(Asel[1:1],Q,muxOut1,muxOut2);

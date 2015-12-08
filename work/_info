@@ -1,0 +1,97 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Student\Desktop\yen\dataPath
+vinstructionSetOperation
+I@i:2<8WbLoam`VRPPH:B20
+Vfi:8<^NhkX:D0KZ_j9RLa0
+w1449568532
+8C:/Users/Student/Desktop/yen/dataPath/instructionSetOperation.v
+FC:/Users/Student/Desktop/yen/dataPath/instructionSetOperation.v
+L0 1
+Z1 OV;L;6.5b;42
+r1
+31
+Z2 !s102 -nocovercells
+Z3 o-work work -nocovercells -O0
+ninstruction@set@operation
+!s100 CM]V;a?Qc<Wh6Oc8kj5f81
+!s85 0
+!s101 -O0
+vinstructionSetOperation_tb
+!s100 OU:Zl3YC;a58[=VGINP9m3
+IZW7R:knmLH4d<E[Pc3hnO1
+VEin4PDUPVIRMikDVGL@_@2
+w1449569956
+8C:/Users/Student/Desktop/yen/dataPath/instructionSetOperation_tb.v
+FC:/Users/Student/Desktop/yen/dataPath/instructionSetOperation_tb.v
+L0 1
+R1
+r1
+!s85 0
+31
+!s101 -O0
+R2
+R3
+ninstruction@set@operation_tb
+vmultiplexer
+IYNK=n?fB@Lgd<Plg6VGQ[2
+VI;T5FbU46G]1[^gXRfQJ23
+w1447755003
+8C:/Users/Student/Desktop/yen/dataPath/multiplexer.v
+FC:/Users/Student/Desktop/yen/dataPath/multiplexer.v
+L0 1
+R1
+r1
+31
+R2
+R3
+!s100 JN4_Z=JlCPP4EC;fB>MdR2
+!s85 0
+!s101 -O0
+vregister
+IV8JJc@=MVVGMQ=>MSgWTi0
+V2PRmEf[3:B0EZXD_hGD_V3
+w1447751963
+8C:/Users/Student/Desktop/yen/dataPath/register.v
+FC:/Users/Student/Desktop/yen/dataPath/register.v
+L0 1
+R1
+r1
+31
+R2
+R3
+!s100 29Sb1Y7HPgU[mI2EiAfhV2
+!s85 0
+!s101 -O0
+vsub
+IAd8<8C1ChNYo8hiQ0TGOK3
+V_878BDP11D0]S29]>nd_b3
+w1448358021
+8C:/Users/Student/Desktop/yen/dataPath/sub.v
+FC:/Users/Student/Desktop/yen/dataPath/sub.v
+L0 1
+R1
+r1
+31
+R2
+R3
+!s100 eCn9Ea57i3>5eK=5YV<`91
+!s85 0
+!s101 -O0
+vsub_tb
+IcOHV6^ACojPooGAF@Tn0a3
+VecKnbg2Mbhjk`W[Tn9TC^1
+w1449569323
+8C:/Users/Student/Desktop/yen/dataPath/sub_tb.v
+FC:/Users/Student/Desktop/yen/dataPath/sub_tb.v
+L0 1
+R1
+r1
+31
+R2
+R3
+!s100 Xh<d@;oMH7T1XZ5Lg1^6c0
+!s85 0
+!s101 -O0

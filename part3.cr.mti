@@ -1,0 +1,36 @@
+C:/Users/Student/Desktop/yen/dataPath/instructionSetOperation.v {1 {vlog -work work -nocovercells C:/Users/Student/Desktop/yen/dataPath/instructionSetOperation.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module instructionSetOperation
+
+Top level modules:
+	instructionSetOperation
+
+} {} {}} C:/Users/Student/Desktop/yen/dataPath/multiplexer.v {1 {vlog -work work -nocovercells C:/Users/Student/Desktop/yen/dataPath/multiplexer.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module multiplexer
+
+Top level modules:
+	multiplexer
+
+} {} {}} C:/Users/Student/Desktop/yen/dataPath/instructionSetOperation_tb.v {1 {vlog -work work -nocovercells C:/Users/Student/Desktop/yen/dataPath/instructionSetOperation_tb.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module instructionSetOperation_tb
+
+Top level modules:
+	instructionSetOperation_tb
+
+} {} {}} C:/Users/Student/Desktop/yen/dataPath/register.v {1 {vlog -work work -nocovercells C:/Users/Student/Desktop/yen/dataPath/register.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module register
+
+Top level modules:
+	register
+
+} {} {}} C:/Users/Student/Desktop/yen/dataPath/sub.v {1 {vlog -work work -nocovercells C:/Users/Student/Desktop/yen/dataPath/sub.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module sub
+
+Top level modules:
+	sub
+
+} {} {}}

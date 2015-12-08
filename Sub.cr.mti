@@ -1,0 +1,15 @@
+C:/Users/Student/Desktop/yen/dataPath/sub_tb.v {1 {vlog -work work -nocovercells C:/Users/Student/Desktop/yen/dataPath/sub_tb.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module sub_tb
+
+Top level modules:
+	sub_tb
+
+} {} {}} C:/Users/Student/Desktop/yen/dataPath/sub.v {1 {vlog -work work -nocovercells C:/Users/Student/Desktop/yen/dataPath/sub.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module sub
+
+Top level modules:
+	sub
+
+} {} {}}

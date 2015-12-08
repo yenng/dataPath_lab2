@@ -20,42 +20,6 @@ VHSM_ON
 -- Start VHDL Libraries --
 -- End VHDL Libraries --
 # entity
-dataPath
-# storage
-db|dataPath.(0).cnf
-db|dataPath.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-datapath.v
-116585c0d298fe9d33786e7e4478e
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-|
-}
-# macro_sequence
-
-# end
-# entity
 register
 # storage
 db|dataPath.(2).cnf
@@ -256,42 +220,6 @@ memRAM:part2
 
 # end
 # entity
-instructionSetOperation
-# storage
-db|dataPath.(7).cnf
-db|dataPath.(7).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-instructionsetoperation.v
-c2283e6a3f92e1e4346493975bd04e21
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-instructionSetOperation:part3
-}
-# macro_sequence
-
-# end
-# entity
 multiplexer
 # storage
 db|dataPath.(8).cnf
@@ -402,6 +330,78 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 }
 # hierarchies {
 instructionCycleOperation:part1
+}
+# macro_sequence
+
+# end
+# entity
+instructionSetOperation
+# storage
+db|dataPath.(7).cnf
+db|dataPath.(7).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+instructionsetoperation.v
+dd3da9f3d03a0b1b75e14112a2b3c94
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+instructionSetOperation:part3
+}
+# macro_sequence
+
+# end
+# entity
+dataPath
+# storage
+db|dataPath.(0).cnf
+db|dataPath.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+datapath.v
+f8794bb3d52e58ab3422cb319341b7c
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
 }
 # macro_sequence
 
