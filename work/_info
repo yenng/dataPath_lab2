@@ -3,38 +3,117 @@ K3
 13
 cModel Technology
 Z0 dC:\Users\Student\Desktop\yen\dataPath
-vinstructionSetOperation
-I@i:2<8WbLoam`VRPPH:B20
-Vfi:8<^NhkX:D0KZ_j9RLa0
-w1449568532
-8C:/Users/Student/Desktop/yen/dataPath/instructionSetOperation.v
-FC:/Users/Student/Desktop/yen/dataPath/instructionSetOperation.v
+vdataPath
+Iaf^Ah<I]iVBTmg:Z5H>WL1
+V:eX_ZB@DQ=Z8bThRnPjd30
+w1450172103
+8C:/Users/Student/Desktop/yen/dataPath/dataPath.v
+FC:/Users/Student/Desktop/yen/dataPath/dataPath.v
 L0 1
 Z1 OV;L;6.5b;42
 r1
 31
 Z2 !s102 -nocovercells
 Z3 o-work work -nocovercells -O0
+ndata@path
+!s100 9AoaGgLDM3NWzb:QQib;C0
+!s85 0
+!s101 -O0
+vdataPath_tb
+IXz=Ide9W=Z3;P_T]7m13n0
+V3;>W50[elS>]]FcC2C9Kn2
+w1450172685
+8C:/Users/Student/Desktop/yen/dataPath/dataPath_tb.v
+FC:/Users/Student/Desktop/yen/dataPath/dataPath_tb.v
+L0 1
+R1
+r1
+31
+R2
+R3
+ndata@path_tb
+!s100 Ad2Gd2TNzbNY<cAWYAI_R0
+!s85 0
+!s101 -O0
+vincrement
+IDfijL1bO7eIoe^JZfmKZ=1
+VVN`EcUX^lNUoQ[MADf5lJ3
+w1446540524
+8C:/Users/Student/Desktop/yen/dataPath/increment.v
+FC:/Users/Student/Desktop/yen/dataPath/increment.v
+L0 1
+R1
+r1
+31
+R2
+R3
+!s100 OQ=cf=R5lUgD]dUE^B9W50
+!s85 0
+!s101 -O0
+vinstructionCycleOperation
+IVn?jUVQA>1k[?L7Q7YiJN3
+VEHA`ShA6oHIWj_c^>QU]X1
+w1448960790
+8C:/Users/Student/Desktop/yen/dataPath/instructionCycleOperation.v
+FC:/Users/Student/Desktop/yen/dataPath/instructionCycleOperation.v
+L0 1
+R1
+r1
+31
+R2
+R3
+ninstruction@cycle@operation
+!s100 UN?a5<1NjM7[KMe[GY:;T1
+!s85 0
+!s101 -O0
+vinstructionSetOperation
+I1BOGW008FNcNU=4Eh]FTa2
+Vfi:8<^NhkX:D0KZ_j9RLa0
+w1450165209
+8C:/Users/Student/Desktop/yen/dataPath/instructionSetOperation.v
+FC:/Users/Student/Desktop/yen/dataPath/instructionSetOperation.v
+L0 1
+R1
+r1
+31
+R2
+R3
 ninstruction@set@operation
-!s100 CM]V;a?Qc<Wh6Oc8kj5f81
+!s100 6DkFdg@_6^=XbDnSKQmX31
 !s85 0
 !s101 -O0
 vinstructionSetOperation_tb
-!s100 OU:Zl3YC;a58[=VGINP9m3
-IZW7R:knmLH4d<E[Pc3hnO1
+I1W`jS:0IF?8RAR]M;OCSj2
 VEin4PDUPVIRMikDVGL@_@2
-w1449569956
+w1450165622
 8C:/Users/Student/Desktop/yen/dataPath/instructionSetOperation_tb.v
 FC:/Users/Student/Desktop/yen/dataPath/instructionSetOperation_tb.v
 L0 1
 R1
 r1
-!s85 0
 31
-!s101 -O0
 R2
 R3
 ninstruction@set@operation_tb
+!s100 nS=@mO4UT93?^W:fRVT^g3
+!s85 0
+!s101 -O0
+vmemRAM
+I<lS2P9_Kj9M1YOGH?3>Nb1
+VP:Ze:Z20QU]]D7JzY<nzA3
+w1448354717
+8C:/Users/Student/Desktop/yen/dataPath/memRam.v
+FC:/Users/Student/Desktop/yen/dataPath/memRam.v
+L0 1
+R1
+r1
+31
+R2
+R3
+nmem@r@a@m
+!s100 VQ<2D9BQ>;oC_MfT[:0ej1
+!s85 0
+!s101 -O0
 vmultiplexer
 IYNK=n?fB@Lgd<Plg6VGQ[2
 VI;T5FbU46G]1[^gXRfQJ23
@@ -66,24 +145,24 @@ R3
 !s85 0
 !s101 -O0
 vsub
-IAd8<8C1ChNYo8hiQ0TGOK3
+!s100 ST[UaLfaQ1?b30kH9J=d33
+I^ijV6QJim76i8a>djP52i2
 V_878BDP11D0]S29]>nd_b3
-w1448358021
+w1450164914
 8C:/Users/Student/Desktop/yen/dataPath/sub.v
 FC:/Users/Student/Desktop/yen/dataPath/sub.v
 L0 1
 R1
 r1
+!s85 0
 31
+!s101 -O0
 R2
 R3
-!s100 eCn9Ea57i3>5eK=5YV<`91
-!s85 0
-!s101 -O0
 vsub_tb
-IcOHV6^ACojPooGAF@Tn0a3
+I1m0J3[NJZj4NB9M`Fj7WH2
 VecKnbg2Mbhjk`W[Tn9TC^1
-w1449569323
+w1450164303
 8C:/Users/Student/Desktop/yen/dataPath/sub_tb.v
 FC:/Users/Student/Desktop/yen/dataPath/sub_tb.v
 L0 1
@@ -92,6 +171,6 @@ r1
 31
 R2
 R3
-!s100 Xh<d@;oMH7T1XZ5Lg1^6c0
+!s100 G1G2dX9<kLh40=8bzPDXa1
 !s85 0
 !s101 -O0

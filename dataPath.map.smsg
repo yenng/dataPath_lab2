@@ -1,1 +1,3 @@
+Info (10281): Verilog HDL Declaration information at dataPath_tb.v(2): object "Sub" differs only in case from object "sub" in the same scope
+Info (10281): Verilog HDL Declaration information at dataPath_tb.v(4): object "Input" differs only in case from object "INPUT" in the same scope
 Info (10281): Verilog HDL Declaration information at instructionCycleOperation.v(8): object "PC_increment" differs only in case from object "pc_increment" in the same scope

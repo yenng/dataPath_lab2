@@ -9,7 +9,16 @@ module sub_tb();
 		in2	= 2;
 	end	
 
-
+	initial begin
+		$display("Sub	in1	in2	Out");
+		$monitor("%d	%d	%d	%d",
+		Sub, in1, in2, Out);
+	end
+	
+	
+	always	#2	in1 = in1 + 1;
+	always	#2	in2 = in2 + 2;
+	always	#2	Sub = ~Sub;
 
 
 

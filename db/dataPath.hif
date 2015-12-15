@@ -263,42 +263,6 @@ instructionSetOperation:part3|multiplexer:Asel_mux2
 
 # end
 # entity
-sub
-# storage
-db|dataPath.(9).cnf
-db|dataPath.(9).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-sub.v
-a5fea044f232abfbe851cf2fc883ac7d
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-instructionSetOperation:part3|sub:add_sub
-}
-# macro_sequence
-
-# end
-# entity
 instructionCycleOperation
 # storage
 db|dataPath.(1).cnf
@@ -346,7 +310,7 @@ ON
 # case_sensitive
 # source_file
 instructionsetoperation.v
-dd3da9f3d03a0b1b75e14112a2b3c94
+289fc23ceadf723871c1104de804d67
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -371,6 +335,42 @@ instructionSetOperation:part3
 
 # end
 # entity
+sub
+# storage
+db|dataPath.(9).cnf
+db|dataPath.(9).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+sub.v
+e91dce8ef4e075bdbe61c19af78a7056
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+instructionSetOperation:part3|sub:add_sub
+}
+# macro_sequence
+
+# end
+# entity
 dataPath
 # storage
 db|dataPath.(0).cnf
@@ -382,7 +382,7 @@ ON
 # case_sensitive
 # source_file
 datapath.v
-f8794bb3d52e58ab3422cb319341b7c
+4c29b35b71ddd3cd169a6ea899544b
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT

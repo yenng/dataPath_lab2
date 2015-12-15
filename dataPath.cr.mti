@@ -1,0 +1,57 @@
+C:/Users/Student/Desktop/yen/dataPath/dataPath.v {1 {vlog -work work -nocovercells C:/Users/Student/Desktop/yen/dataPath/dataPath.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module dataPath
+
+Top level modules:
+	dataPath
+
+} {} {}} C:/Users/Student/Desktop/yen/dataPath/multiplexer.v {1 {vlog -work work -nocovercells C:/Users/Student/Desktop/yen/dataPath/multiplexer.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module multiplexer
+
+Top level modules:
+	multiplexer
+
+} {} {}} C:/Users/Student/Desktop/yen/dataPath/memRam.v {1 {vlog -work work -nocovercells C:/Users/Student/Desktop/yen/dataPath/memRam.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module memRAM
+
+Top level modules:
+	memRAM
+
+} {} {}} C:/Users/Student/Desktop/yen/dataPath/instructionSetOperation.v {1 {vlog -work work -nocovercells C:/Users/Student/Desktop/yen/dataPath/instructionSetOperation.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module instructionSetOperation
+
+Top level modules:
+	instructionSetOperation
+
+} {} {}} C:/Users/Student/Desktop/yen/dataPath/instructionCycleOperation.v {1 {vlog -work work -nocovercells C:/Users/Student/Desktop/yen/dataPath/instructionCycleOperation.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module instructionCycleOperation
+
+Top level modules:
+	instructionCycleOperation
+
+} {} {}} C:/Users/Student/Desktop/yen/dataPath/register.v {1 {vlog -work work -nocovercells C:/Users/Student/Desktop/yen/dataPath/register.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module register
+
+Top level modules:
+	register
+
+} {} {}} C:/Users/Student/Desktop/yen/dataPath/increment.v {1 {vlog -work work -nocovercells C:/Users/Student/Desktop/yen/dataPath/increment.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module increment
+
+Top level modules:
+	increment
+
+} {} {}} C:/Users/Student/Desktop/yen/dataPath/sub.v {1 {vlog -work work -nocovercells C:/Users/Student/Desktop/yen/dataPath/sub.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module sub
+
+Top level modules:
+	sub
+
+} {} {}}

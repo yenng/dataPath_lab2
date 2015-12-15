@@ -15,10 +15,10 @@ module sub_tb();
 		Sub, in1, in2, Out);
 	end
 	
-
-
-
-
+	
+	always	#2	in1 = in1 + 1;
+	always	#2	in2 = in2 + 2;
+	always	#2	Sub = ~Sub;
 
 	sub		subTest(Sub, in1, in2, Out);
 

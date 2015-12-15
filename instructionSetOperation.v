@@ -9,8 +9,8 @@ module instructionSetOperation(
 	
 	multiplexer #(.data_size(8)) Asel_mux1(Asel[0:0],Input,subOut,muxOut1);
 	multiplexer #(.data_size(8)) Asel_mux2(Asel[1:1],Q,muxOut1,muxOut2);
+	sub add_sub(Sub, Output, Q, subOut);
 	register #(.data_size(8)) ARegister(Aload, Clock, Reset, muxOut2, Output);
-	sub add_sub(Sub, Output, Q, SubOut);
 	
 	always@(Output) begin
 		if (Output == 0) Aeq0 = 1;

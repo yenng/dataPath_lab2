@@ -1,5 +1,5 @@
 Classic Timing Analyzer report for dataPath
-Tue Dec 08 18:20:04 2015
+Tue Dec 15 16:56:58 2015
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
 
 
@@ -14,8 +14,9 @@ Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
   6. Clock Setup: 'Clock'
   7. tsu
   8. tco
-  9. th
- 10. Timing Analyzer Messages
+  9. tpd
+ 10. th
+ 11. Timing Analyzer Messages
 
 
 
@@ -38,17 +39,18 @@ applicable agreement for further details.
 
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Timing Analyzer Summary                                                                                                                                                                                                                                                    ;
-+------------------------------+-------+---------------+------------------------------------------------+---------------------------------------------------------+-------------------------------------------------------------------+------------+----------+--------------+
-; Type                         ; Slack ; Required Time ; Actual Time                                    ; From                                                    ; To                                                                ; From Clock ; To Clock ; Failed Paths ;
-+------------------------------+-------+---------------+------------------------------------------------+---------------------------------------------------------+-------------------------------------------------------------------+------------+----------+--------------+
-; Worst-case tsu               ; N/A   ; None          ; 4.170 ns                                       ; IRload                                                  ; instructionCycleOperation:part1|register:eightBitsRegister|out[7] ; --         ; Clock    ; 0            ;
-; Worst-case tco               ; N/A   ; None          ; 11.570 ns                                      ; instructionSetOperation:part3|register:ARegister|out[5] ; Output[5]                                                         ; Clock      ; --       ; 0            ;
-; Worst-case th                ; N/A   ; None          ; -3.338 ns                                      ; Asel[0]                                                 ; instructionSetOperation:part3|register:ARegister|out[7]           ; --         ; Clock    ; 0            ;
-; Clock Setup: 'Clock'         ; N/A   ; None          ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionSetOperation:part3|register:ARegister|out[6] ; instructionCycleOperation:part1|register:eightBitsRegister|out[6] ; Clock      ; Clock    ; 0            ;
-; Total number of failed paths ;       ;               ;                                                ;                                                         ;                                                                   ;            ;          ; 0            ;
-+------------------------------+-------+---------------+------------------------------------------------+---------------------------------------------------------+-------------------------------------------------------------------+------------+----------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                                            ;
++------------------------------+-------+---------------+----------------------------------+---------------------------------------------------------+---------------------------------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                                                    ; To                                                      ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+---------------------------------------------------------+---------------------------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 5.627 ns                         ; Sub                                                     ; instructionSetOperation:part3|register:ARegister|out[1] ; --         ; Clock    ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 9.746 ns                         ; instructionSetOperation:part3|register:ARegister|out[6] ; Output[6]                                               ; Clock      ; --       ; 0            ;
+; Worst-case tpd               ; N/A   ; None          ; 11.486 ns                        ; Meminst                                                 ; Address[3]                                              ; --         ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -3.531 ns                        ; Input[0]                                                ; instructionSetOperation:part3|register:ARegister|out[0] ; --         ; Clock    ; 0            ;
+; Clock Setup: 'Clock'         ; N/A   ; None          ; 311.92 MHz ( period = 3.206 ns ) ; instructionSetOperation:part3|register:ARegister|out[6] ; instructionSetOperation:part3|register:ARegister|out[1] ; Clock      ; Clock    ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                                         ;                                                         ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+---------------------------------------------------------+---------------------------------------------------------+------------+----------+--------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -105,15 +107,97 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Clock Setup: 'Clock'                                                                                                                                                                                                                                                                             ;
-+-------+------------------------------------------------+---------------------------------------------------------+-------------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
-; Slack ; Actual fmax (period)                           ; From                                                    ; To                                                                ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
-+-------+------------------------------------------------+---------------------------------------------------------+-------------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
-; N/A   ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionSetOperation:part3|register:ARegister|out[6] ; instructionCycleOperation:part1|register:eightBitsRegister|out[6] ; Clock      ; Clock    ; None                        ; None                      ; 0.647 ns                ;
-; N/A   ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionSetOperation:part3|register:ARegister|out[5] ; instructionCycleOperation:part1|register:eightBitsRegister|out[5] ; Clock      ; Clock    ; None                        ; None                      ; 0.645 ns                ;
-; N/A   ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionSetOperation:part3|register:ARegister|out[7] ; instructionCycleOperation:part1|register:eightBitsRegister|out[7] ; Clock      ; Clock    ; None                        ; None                      ; 0.644 ns                ;
-+-------+------------------------------------------------+---------------------------------------------------------+-------------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'Clock'                                                                                                                                                                                                                                                                                       ;
++-------+------------------------------------------------+-------------------------------------------------------------------+-------------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From                                                              ; To                                                                ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+-------------------------------------------------------------------+-------------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 311.92 MHz ( period = 3.206 ns )               ; instructionSetOperation:part3|register:ARegister|out[6]           ; instructionSetOperation:part3|register:ARegister|out[0]           ; Clock      ; Clock    ; None                        ; None                      ; 2.967 ns                ;
+; N/A   ; 311.92 MHz ( period = 3.206 ns )               ; instructionSetOperation:part3|register:ARegister|out[6]           ; instructionSetOperation:part3|register:ARegister|out[6]           ; Clock      ; Clock    ; None                        ; None                      ; 2.967 ns                ;
+; N/A   ; 311.92 MHz ( period = 3.206 ns )               ; instructionSetOperation:part3|register:ARegister|out[6]           ; instructionSetOperation:part3|register:ARegister|out[4]           ; Clock      ; Clock    ; None                        ; None                      ; 2.967 ns                ;
+; N/A   ; 311.92 MHz ( period = 3.206 ns )               ; instructionSetOperation:part3|register:ARegister|out[6]           ; instructionSetOperation:part3|register:ARegister|out[5]           ; Clock      ; Clock    ; None                        ; None                      ; 2.967 ns                ;
+; N/A   ; 311.92 MHz ( period = 3.206 ns )               ; instructionSetOperation:part3|register:ARegister|out[6]           ; instructionSetOperation:part3|register:ARegister|out[2]           ; Clock      ; Clock    ; None                        ; None                      ; 2.967 ns                ;
+; N/A   ; 311.92 MHz ( period = 3.206 ns )               ; instructionSetOperation:part3|register:ARegister|out[6]           ; instructionSetOperation:part3|register:ARegister|out[3]           ; Clock      ; Clock    ; None                        ; None                      ; 2.967 ns                ;
+; N/A   ; 311.92 MHz ( period = 3.206 ns )               ; instructionSetOperation:part3|register:ARegister|out[6]           ; instructionSetOperation:part3|register:ARegister|out[1]           ; Clock      ; Clock    ; None                        ; None                      ; 2.967 ns                ;
+; N/A   ; 313.38 MHz ( period = 3.191 ns )               ; instructionSetOperation:part3|register:ARegister|out[7]           ; instructionSetOperation:part3|register:ARegister|out[0]           ; Clock      ; Clock    ; None                        ; None                      ; 2.952 ns                ;
+; N/A   ; 313.38 MHz ( period = 3.191 ns )               ; instructionSetOperation:part3|register:ARegister|out[7]           ; instructionSetOperation:part3|register:ARegister|out[6]           ; Clock      ; Clock    ; None                        ; None                      ; 2.952 ns                ;
+; N/A   ; 313.38 MHz ( period = 3.191 ns )               ; instructionSetOperation:part3|register:ARegister|out[7]           ; instructionSetOperation:part3|register:ARegister|out[4]           ; Clock      ; Clock    ; None                        ; None                      ; 2.952 ns                ;
+; N/A   ; 313.38 MHz ( period = 3.191 ns )               ; instructionSetOperation:part3|register:ARegister|out[7]           ; instructionSetOperation:part3|register:ARegister|out[5]           ; Clock      ; Clock    ; None                        ; None                      ; 2.952 ns                ;
+; N/A   ; 313.38 MHz ( period = 3.191 ns )               ; instructionSetOperation:part3|register:ARegister|out[7]           ; instructionSetOperation:part3|register:ARegister|out[2]           ; Clock      ; Clock    ; None                        ; None                      ; 2.952 ns                ;
+; N/A   ; 313.38 MHz ( period = 3.191 ns )               ; instructionSetOperation:part3|register:ARegister|out[7]           ; instructionSetOperation:part3|register:ARegister|out[3]           ; Clock      ; Clock    ; None                        ; None                      ; 2.952 ns                ;
+; N/A   ; 313.38 MHz ( period = 3.191 ns )               ; instructionSetOperation:part3|register:ARegister|out[7]           ; instructionSetOperation:part3|register:ARegister|out[1]           ; Clock      ; Clock    ; None                        ; None                      ; 2.952 ns                ;
+; N/A   ; 327.01 MHz ( period = 3.058 ns )               ; instructionSetOperation:part3|register:ARegister|out[2]           ; instructionSetOperation:part3|register:ARegister|out[0]           ; Clock      ; Clock    ; None                        ; None                      ; 2.819 ns                ;
+; N/A   ; 327.01 MHz ( period = 3.058 ns )               ; instructionSetOperation:part3|register:ARegister|out[2]           ; instructionSetOperation:part3|register:ARegister|out[6]           ; Clock      ; Clock    ; None                        ; None                      ; 2.819 ns                ;
+; N/A   ; 327.01 MHz ( period = 3.058 ns )               ; instructionSetOperation:part3|register:ARegister|out[2]           ; instructionSetOperation:part3|register:ARegister|out[4]           ; Clock      ; Clock    ; None                        ; None                      ; 2.819 ns                ;
+; N/A   ; 327.01 MHz ( period = 3.058 ns )               ; instructionSetOperation:part3|register:ARegister|out[2]           ; instructionSetOperation:part3|register:ARegister|out[5]           ; Clock      ; Clock    ; None                        ; None                      ; 2.819 ns                ;
+; N/A   ; 327.01 MHz ( period = 3.058 ns )               ; instructionSetOperation:part3|register:ARegister|out[2]           ; instructionSetOperation:part3|register:ARegister|out[2]           ; Clock      ; Clock    ; None                        ; None                      ; 2.819 ns                ;
+; N/A   ; 327.01 MHz ( period = 3.058 ns )               ; instructionSetOperation:part3|register:ARegister|out[2]           ; instructionSetOperation:part3|register:ARegister|out[3]           ; Clock      ; Clock    ; None                        ; None                      ; 2.819 ns                ;
+; N/A   ; 327.01 MHz ( period = 3.058 ns )               ; instructionSetOperation:part3|register:ARegister|out[2]           ; instructionSetOperation:part3|register:ARegister|out[1]           ; Clock      ; Clock    ; None                        ; None                      ; 2.819 ns                ;
+; N/A   ; 327.12 MHz ( period = 3.057 ns )               ; instructionSetOperation:part3|register:ARegister|out[4]           ; instructionSetOperation:part3|register:ARegister|out[0]           ; Clock      ; Clock    ; None                        ; None                      ; 2.818 ns                ;
+; N/A   ; 327.12 MHz ( period = 3.057 ns )               ; instructionSetOperation:part3|register:ARegister|out[4]           ; instructionSetOperation:part3|register:ARegister|out[6]           ; Clock      ; Clock    ; None                        ; None                      ; 2.818 ns                ;
+; N/A   ; 327.12 MHz ( period = 3.057 ns )               ; instructionSetOperation:part3|register:ARegister|out[4]           ; instructionSetOperation:part3|register:ARegister|out[4]           ; Clock      ; Clock    ; None                        ; None                      ; 2.818 ns                ;
+; N/A   ; 327.12 MHz ( period = 3.057 ns )               ; instructionSetOperation:part3|register:ARegister|out[4]           ; instructionSetOperation:part3|register:ARegister|out[5]           ; Clock      ; Clock    ; None                        ; None                      ; 2.818 ns                ;
+; N/A   ; 327.12 MHz ( period = 3.057 ns )               ; instructionSetOperation:part3|register:ARegister|out[4]           ; instructionSetOperation:part3|register:ARegister|out[2]           ; Clock      ; Clock    ; None                        ; None                      ; 2.818 ns                ;
+; N/A   ; 327.12 MHz ( period = 3.057 ns )               ; instructionSetOperation:part3|register:ARegister|out[4]           ; instructionSetOperation:part3|register:ARegister|out[3]           ; Clock      ; Clock    ; None                        ; None                      ; 2.818 ns                ;
+; N/A   ; 327.12 MHz ( period = 3.057 ns )               ; instructionSetOperation:part3|register:ARegister|out[4]           ; instructionSetOperation:part3|register:ARegister|out[1]           ; Clock      ; Clock    ; None                        ; None                      ; 2.818 ns                ;
+; N/A   ; 330.14 MHz ( period = 3.029 ns )               ; instructionSetOperation:part3|register:ARegister|out[3]           ; instructionSetOperation:part3|register:ARegister|out[0]           ; Clock      ; Clock    ; None                        ; None                      ; 2.790 ns                ;
+; N/A   ; 330.14 MHz ( period = 3.029 ns )               ; instructionSetOperation:part3|register:ARegister|out[3]           ; instructionSetOperation:part3|register:ARegister|out[6]           ; Clock      ; Clock    ; None                        ; None                      ; 2.790 ns                ;
+; N/A   ; 330.14 MHz ( period = 3.029 ns )               ; instructionSetOperation:part3|register:ARegister|out[3]           ; instructionSetOperation:part3|register:ARegister|out[4]           ; Clock      ; Clock    ; None                        ; None                      ; 2.790 ns                ;
+; N/A   ; 330.14 MHz ( period = 3.029 ns )               ; instructionSetOperation:part3|register:ARegister|out[3]           ; instructionSetOperation:part3|register:ARegister|out[5]           ; Clock      ; Clock    ; None                        ; None                      ; 2.790 ns                ;
+; N/A   ; 330.14 MHz ( period = 3.029 ns )               ; instructionSetOperation:part3|register:ARegister|out[3]           ; instructionSetOperation:part3|register:ARegister|out[2]           ; Clock      ; Clock    ; None                        ; None                      ; 2.790 ns                ;
+; N/A   ; 330.14 MHz ( period = 3.029 ns )               ; instructionSetOperation:part3|register:ARegister|out[3]           ; instructionSetOperation:part3|register:ARegister|out[3]           ; Clock      ; Clock    ; None                        ; None                      ; 2.790 ns                ;
+; N/A   ; 330.14 MHz ( period = 3.029 ns )               ; instructionSetOperation:part3|register:ARegister|out[3]           ; instructionSetOperation:part3|register:ARegister|out[1]           ; Clock      ; Clock    ; None                        ; None                      ; 2.790 ns                ;
+; N/A   ; 343.05 MHz ( period = 2.915 ns )               ; instructionSetOperation:part3|register:ARegister|out[6]           ; instructionCycleOperation:part1|register:eightBitsRegister|out[6] ; Clock      ; Clock    ; None                        ; None                      ; 2.697 ns                ;
+; N/A   ; 344.47 MHz ( period = 2.903 ns )               ; instructionSetOperation:part3|register:ARegister|out[5]           ; instructionSetOperation:part3|register:ARegister|out[0]           ; Clock      ; Clock    ; None                        ; None                      ; 2.664 ns                ;
+; N/A   ; 344.47 MHz ( period = 2.903 ns )               ; instructionSetOperation:part3|register:ARegister|out[5]           ; instructionSetOperation:part3|register:ARegister|out[6]           ; Clock      ; Clock    ; None                        ; None                      ; 2.664 ns                ;
+; N/A   ; 344.47 MHz ( period = 2.903 ns )               ; instructionSetOperation:part3|register:ARegister|out[5]           ; instructionSetOperation:part3|register:ARegister|out[4]           ; Clock      ; Clock    ; None                        ; None                      ; 2.664 ns                ;
+; N/A   ; 344.47 MHz ( period = 2.903 ns )               ; instructionSetOperation:part3|register:ARegister|out[5]           ; instructionSetOperation:part3|register:ARegister|out[5]           ; Clock      ; Clock    ; None                        ; None                      ; 2.664 ns                ;
+; N/A   ; 344.47 MHz ( period = 2.903 ns )               ; instructionSetOperation:part3|register:ARegister|out[5]           ; instructionSetOperation:part3|register:ARegister|out[2]           ; Clock      ; Clock    ; None                        ; None                      ; 2.664 ns                ;
+; N/A   ; 344.47 MHz ( period = 2.903 ns )               ; instructionSetOperation:part3|register:ARegister|out[5]           ; instructionSetOperation:part3|register:ARegister|out[3]           ; Clock      ; Clock    ; None                        ; None                      ; 2.664 ns                ;
+; N/A   ; 344.47 MHz ( period = 2.903 ns )               ; instructionSetOperation:part3|register:ARegister|out[5]           ; instructionSetOperation:part3|register:ARegister|out[1]           ; Clock      ; Clock    ; None                        ; None                      ; 2.664 ns                ;
+; N/A   ; 344.83 MHz ( period = 2.900 ns )               ; instructionSetOperation:part3|register:ARegister|out[0]           ; instructionSetOperation:part3|register:ARegister|out[0]           ; Clock      ; Clock    ; None                        ; None                      ; 2.661 ns                ;
+; N/A   ; 344.83 MHz ( period = 2.900 ns )               ; instructionSetOperation:part3|register:ARegister|out[0]           ; instructionSetOperation:part3|register:ARegister|out[6]           ; Clock      ; Clock    ; None                        ; None                      ; 2.661 ns                ;
+; N/A   ; 344.83 MHz ( period = 2.900 ns )               ; instructionSetOperation:part3|register:ARegister|out[0]           ; instructionSetOperation:part3|register:ARegister|out[4]           ; Clock      ; Clock    ; None                        ; None                      ; 2.661 ns                ;
+; N/A   ; 344.83 MHz ( period = 2.900 ns )               ; instructionSetOperation:part3|register:ARegister|out[0]           ; instructionSetOperation:part3|register:ARegister|out[5]           ; Clock      ; Clock    ; None                        ; None                      ; 2.661 ns                ;
+; N/A   ; 344.83 MHz ( period = 2.900 ns )               ; instructionSetOperation:part3|register:ARegister|out[0]           ; instructionSetOperation:part3|register:ARegister|out[2]           ; Clock      ; Clock    ; None                        ; None                      ; 2.661 ns                ;
+; N/A   ; 344.83 MHz ( period = 2.900 ns )               ; instructionSetOperation:part3|register:ARegister|out[0]           ; instructionSetOperation:part3|register:ARegister|out[3]           ; Clock      ; Clock    ; None                        ; None                      ; 2.661 ns                ;
+; N/A   ; 344.83 MHz ( period = 2.900 ns )               ; instructionSetOperation:part3|register:ARegister|out[0]           ; instructionSetOperation:part3|register:ARegister|out[1]           ; Clock      ; Clock    ; None                        ; None                      ; 2.661 ns                ;
+; N/A   ; 357.40 MHz ( period = 2.798 ns )               ; instructionSetOperation:part3|register:ARegister|out[2]           ; instructionCycleOperation:part1|register:eightBitsRegister|out[2] ; Clock      ; Clock    ; None                        ; None                      ; 2.580 ns                ;
+; N/A   ; 365.10 MHz ( period = 2.739 ns )               ; instructionSetOperation:part3|register:ARegister|out[1]           ; instructionSetOperation:part3|register:ARegister|out[0]           ; Clock      ; Clock    ; None                        ; None                      ; 2.500 ns                ;
+; N/A   ; 365.10 MHz ( period = 2.739 ns )               ; instructionSetOperation:part3|register:ARegister|out[1]           ; instructionSetOperation:part3|register:ARegister|out[6]           ; Clock      ; Clock    ; None                        ; None                      ; 2.500 ns                ;
+; N/A   ; 365.10 MHz ( period = 2.739 ns )               ; instructionSetOperation:part3|register:ARegister|out[1]           ; instructionSetOperation:part3|register:ARegister|out[4]           ; Clock      ; Clock    ; None                        ; None                      ; 2.500 ns                ;
+; N/A   ; 365.10 MHz ( period = 2.739 ns )               ; instructionSetOperation:part3|register:ARegister|out[1]           ; instructionSetOperation:part3|register:ARegister|out[5]           ; Clock      ; Clock    ; None                        ; None                      ; 2.500 ns                ;
+; N/A   ; 365.10 MHz ( period = 2.739 ns )               ; instructionSetOperation:part3|register:ARegister|out[1]           ; instructionSetOperation:part3|register:ARegister|out[2]           ; Clock      ; Clock    ; None                        ; None                      ; 2.500 ns                ;
+; N/A   ; 365.10 MHz ( period = 2.739 ns )               ; instructionSetOperation:part3|register:ARegister|out[1]           ; instructionSetOperation:part3|register:ARegister|out[3]           ; Clock      ; Clock    ; None                        ; None                      ; 2.500 ns                ;
+; N/A   ; 365.10 MHz ( period = 2.739 ns )               ; instructionSetOperation:part3|register:ARegister|out[1]           ; instructionSetOperation:part3|register:ARegister|out[1]           ; Clock      ; Clock    ; None                        ; None                      ; 2.500 ns                ;
+; N/A   ; 366.30 MHz ( period = 2.730 ns )               ; instructionSetOperation:part3|register:ARegister|out[0]           ; instructionCycleOperation:part1|register:eightBitsRegister|out[0] ; Clock      ; Clock    ; None                        ; None                      ; 2.512 ns                ;
+; N/A   ; 367.92 MHz ( period = 2.718 ns )               ; instructionSetOperation:part3|register:ARegister|out[3]           ; instructionCycleOperation:part1|register:eightBitsRegister|out[3] ; Clock      ; Clock    ; None                        ; None                      ; 2.500 ns                ;
+; N/A   ; 368.87 MHz ( period = 2.711 ns )               ; instructionSetOperation:part3|register:ARegister|out[1]           ; instructionCycleOperation:part1|register:eightBitsRegister|out[1] ; Clock      ; Clock    ; None                        ; None                      ; 2.493 ns                ;
+; N/A   ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionSetOperation:part3|register:ARegister|out[7]           ; instructionCycleOperation:part1|register:eightBitsRegister|out[7] ; Clock      ; Clock    ; None                        ; None                      ; 2.406 ns                ;
+; N/A   ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionSetOperation:part3|register:ARegister|out[5]           ; instructionCycleOperation:part1|register:eightBitsRegister|out[5] ; Clock      ; Clock    ; None                        ; None                      ; 2.368 ns                ;
+; N/A   ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionSetOperation:part3|register:ARegister|out[4]           ; instructionCycleOperation:part1|register:eightBitsRegister|out[4] ; Clock      ; Clock    ; None                        ; None                      ; 2.320 ns                ;
+; N/A   ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionSetOperation:part3|register:ARegister|out[7]           ; instructionSetOperation:part3|register:ARegister|out[7]           ; Clock      ; Clock    ; None                        ; None                      ; 2.256 ns                ;
+; N/A   ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionCycleOperation:part1|register:fiveBitsRegister|out[0]  ; instructionCycleOperation:part1|register:fiveBitsRegister|out[4]  ; Clock      ; Clock    ; None                        ; None                      ; 1.750 ns                ;
+; N/A   ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionCycleOperation:part1|register:fiveBitsRegister|out[0]  ; instructionCycleOperation:part1|register:fiveBitsRegister|out[3]  ; Clock      ; Clock    ; None                        ; None                      ; 1.670 ns                ;
+; N/A   ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionCycleOperation:part1|register:fiveBitsRegister|out[1]  ; instructionCycleOperation:part1|register:fiveBitsRegister|out[4]  ; Clock      ; Clock    ; None                        ; None                      ; 1.613 ns                ;
+; N/A   ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionCycleOperation:part1|register:fiveBitsRegister|out[0]  ; instructionCycleOperation:part1|register:fiveBitsRegister|out[2]  ; Clock      ; Clock    ; None                        ; None                      ; 1.590 ns                ;
+; N/A   ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionCycleOperation:part1|register:fiveBitsRegister|out[1]  ; instructionCycleOperation:part1|register:fiveBitsRegister|out[3]  ; Clock      ; Clock    ; None                        ; None                      ; 1.533 ns                ;
+; N/A   ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionCycleOperation:part1|register:fiveBitsRegister|out[0]  ; instructionCycleOperation:part1|register:fiveBitsRegister|out[1]  ; Clock      ; Clock    ; None                        ; None                      ; 1.510 ns                ;
+; N/A   ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionCycleOperation:part1|register:fiveBitsRegister|out[2]  ; instructionCycleOperation:part1|register:fiveBitsRegister|out[4]  ; Clock      ; Clock    ; None                        ; None                      ; 1.493 ns                ;
+; N/A   ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionCycleOperation:part1|register:fiveBitsRegister|out[1]  ; instructionCycleOperation:part1|register:fiveBitsRegister|out[2]  ; Clock      ; Clock    ; None                        ; None                      ; 1.453 ns                ;
+; N/A   ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionCycleOperation:part1|register:fiveBitsRegister|out[3]  ; instructionCycleOperation:part1|register:fiveBitsRegister|out[4]  ; Clock      ; Clock    ; None                        ; None                      ; 1.453 ns                ;
+; N/A   ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionCycleOperation:part1|register:fiveBitsRegister|out[2]  ; instructionCycleOperation:part1|register:fiveBitsRegister|out[3]  ; Clock      ; Clock    ; None                        ; None                      ; 1.413 ns                ;
+; N/A   ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionCycleOperation:part1|register:eightBitsRegister|out[3] ; instructionCycleOperation:part1|register:fiveBitsRegister|out[3]  ; Clock      ; Clock    ; None                        ; None                      ; 1.273 ns                ;
+; N/A   ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionCycleOperation:part1|register:eightBitsRegister|out[4] ; instructionCycleOperation:part1|register:fiveBitsRegister|out[4]  ; Clock      ; Clock    ; None                        ; None                      ; 1.268 ns                ;
+; N/A   ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionCycleOperation:part1|register:eightBitsRegister|out[1] ; instructionCycleOperation:part1|register:fiveBitsRegister|out[1]  ; Clock      ; Clock    ; None                        ; None                      ; 1.262 ns                ;
+; N/A   ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionCycleOperation:part1|register:fiveBitsRegister|out[1]  ; instructionCycleOperation:part1|register:fiveBitsRegister|out[1]  ; Clock      ; Clock    ; None                        ; None                      ; 1.020 ns                ;
+; N/A   ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionCycleOperation:part1|register:fiveBitsRegister|out[3]  ; instructionCycleOperation:part1|register:fiveBitsRegister|out[3]  ; Clock      ; Clock    ; None                        ; None                      ; 1.020 ns                ;
+; N/A   ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionCycleOperation:part1|register:eightBitsRegister|out[0] ; instructionCycleOperation:part1|register:fiveBitsRegister|out[0]  ; Clock      ; Clock    ; None                        ; None                      ; 1.001 ns                ;
+; N/A   ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionCycleOperation:part1|register:eightBitsRegister|out[2] ; instructionCycleOperation:part1|register:fiveBitsRegister|out[2]  ; Clock      ; Clock    ; None                        ; None                      ; 0.997 ns                ;
+; N/A   ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionCycleOperation:part1|register:fiveBitsRegister|out[2]  ; instructionCycleOperation:part1|register:fiveBitsRegister|out[2]  ; Clock      ; Clock    ; None                        ; None                      ; 0.981 ns                ;
+; N/A   ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionCycleOperation:part1|register:fiveBitsRegister|out[0]  ; instructionCycleOperation:part1|register:fiveBitsRegister|out[0]  ; Clock      ; Clock    ; None                        ; None                      ; 0.977 ns                ;
+; N/A   ; Restricted to 380.08 MHz ( period = 2.631 ns ) ; instructionCycleOperation:part1|register:fiveBitsRegister|out[4]  ; instructionCycleOperation:part1|register:fiveBitsRegister|out[4]  ; Clock      ; Clock    ; None                        ; None                      ; 0.634 ns                ;
++-------+------------------------------------------------+-------------------------------------------------------------------+-------------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -121,70 +205,115 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------+--------------+------------+----------+-------------------------------------------------------------------+----------+
 ; Slack ; Required tsu ; Actual tsu ; From     ; To                                                                ; To Clock ;
 +-------+--------------+------------+----------+-------------------------------------------------------------------+----------+
-; N/A   ; None         ; 4.170 ns   ; IRload   ; instructionCycleOperation:part1|register:eightBitsRegister|out[5] ; Clock    ;
-; N/A   ; None         ; 4.170 ns   ; IRload   ; instructionCycleOperation:part1|register:eightBitsRegister|out[6] ; Clock    ;
-; N/A   ; None         ; 4.170 ns   ; IRload   ; instructionCycleOperation:part1|register:eightBitsRegister|out[7] ; Clock    ;
-; N/A   ; None         ; 4.139 ns   ; Aload    ; instructionSetOperation:part3|register:ARegister|out[7]           ; Clock    ;
-; N/A   ; None         ; 4.139 ns   ; Aload    ; instructionSetOperation:part3|register:ARegister|out[6]           ; Clock    ;
-; N/A   ; None         ; 4.139 ns   ; Aload    ; instructionSetOperation:part3|register:ARegister|out[5]           ; Clock    ;
-; N/A   ; None         ; 4.139 ns   ; Aload    ; instructionSetOperation:part3|register:ARegister|out[4]           ; Clock    ;
-; N/A   ; None         ; 4.139 ns   ; Aload    ; instructionSetOperation:part3|register:ARegister|out[3]           ; Clock    ;
-; N/A   ; None         ; 4.139 ns   ; Aload    ; instructionSetOperation:part3|register:ARegister|out[2]           ; Clock    ;
-; N/A   ; None         ; 4.139 ns   ; Aload    ; instructionSetOperation:part3|register:ARegister|out[1]           ; Clock    ;
-; N/A   ; None         ; 4.139 ns   ; Aload    ; instructionSetOperation:part3|register:ARegister|out[0]           ; Clock    ;
-; N/A   ; None         ; 4.076 ns   ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[5]           ; Clock    ;
-; N/A   ; None         ; 4.076 ns   ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[4]           ; Clock    ;
-; N/A   ; None         ; 4.058 ns   ; Input[3] ; instructionSetOperation:part3|register:ARegister|out[3]           ; Clock    ;
-; N/A   ; None         ; 4.013 ns   ; Input[6] ; instructionSetOperation:part3|register:ARegister|out[6]           ; Clock    ;
-; N/A   ; None         ; 3.992 ns   ; Input[0] ; instructionSetOperation:part3|register:ARegister|out[0]           ; Clock    ;
-; N/A   ; None         ; 3.825 ns   ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[7]           ; Clock    ;
-; N/A   ; None         ; 3.824 ns   ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[2]           ; Clock    ;
-; N/A   ; None         ; 3.822 ns   ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[6]           ; Clock    ;
-; N/A   ; None         ; 3.822 ns   ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[3]           ; Clock    ;
-; N/A   ; None         ; 3.822 ns   ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[1]           ; Clock    ;
-; N/A   ; None         ; 3.822 ns   ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[0]           ; Clock    ;
-; N/A   ; None         ; 3.734 ns   ; Input[7] ; instructionSetOperation:part3|register:ARegister|out[7]           ; Clock    ;
-; N/A   ; None         ; 3.716 ns   ; Input[4] ; instructionSetOperation:part3|register:ARegister|out[4]           ; Clock    ;
-; N/A   ; None         ; 3.710 ns   ; Input[5] ; instructionSetOperation:part3|register:ARegister|out[5]           ; Clock    ;
-; N/A   ; None         ; 3.709 ns   ; Input[1] ; instructionSetOperation:part3|register:ARegister|out[1]           ; Clock    ;
-; N/A   ; None         ; 3.694 ns   ; Input[2] ; instructionSetOperation:part3|register:ARegister|out[2]           ; Clock    ;
-; N/A   ; None         ; 3.598 ns   ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[3]           ; Clock    ;
-; N/A   ; None         ; 3.598 ns   ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[1]           ; Clock    ;
-; N/A   ; None         ; 3.597 ns   ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[6]           ; Clock    ;
-; N/A   ; None         ; 3.596 ns   ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[5]           ; Clock    ;
-; N/A   ; None         ; 3.595 ns   ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[4]           ; Clock    ;
-; N/A   ; None         ; 3.592 ns   ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[2]           ; Clock    ;
-; N/A   ; None         ; 3.590 ns   ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[0]           ; Clock    ;
-; N/A   ; None         ; 3.586 ns   ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[7]           ; Clock    ;
+; N/A   ; None         ; 5.627 ns   ; Sub      ; instructionSetOperation:part3|register:ARegister|out[0]           ; Clock    ;
+; N/A   ; None         ; 5.627 ns   ; Sub      ; instructionSetOperation:part3|register:ARegister|out[6]           ; Clock    ;
+; N/A   ; None         ; 5.627 ns   ; Sub      ; instructionSetOperation:part3|register:ARegister|out[4]           ; Clock    ;
+; N/A   ; None         ; 5.627 ns   ; Sub      ; instructionSetOperation:part3|register:ARegister|out[5]           ; Clock    ;
+; N/A   ; None         ; 5.627 ns   ; Sub      ; instructionSetOperation:part3|register:ARegister|out[2]           ; Clock    ;
+; N/A   ; None         ; 5.627 ns   ; Sub      ; instructionSetOperation:part3|register:ARegister|out[3]           ; Clock    ;
+; N/A   ; None         ; 5.627 ns   ; Sub      ; instructionSetOperation:part3|register:ARegister|out[1]           ; Clock    ;
+; N/A   ; None         ; 5.288 ns   ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[0]           ; Clock    ;
+; N/A   ; None         ; 5.288 ns   ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[6]           ; Clock    ;
+; N/A   ; None         ; 5.288 ns   ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[4]           ; Clock    ;
+; N/A   ; None         ; 5.288 ns   ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[5]           ; Clock    ;
+; N/A   ; None         ; 5.288 ns   ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[2]           ; Clock    ;
+; N/A   ; None         ; 5.288 ns   ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[3]           ; Clock    ;
+; N/A   ; None         ; 5.288 ns   ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[1]           ; Clock    ;
+; N/A   ; None         ; 5.087 ns   ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[0]           ; Clock    ;
+; N/A   ; None         ; 5.087 ns   ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[6]           ; Clock    ;
+; N/A   ; None         ; 5.087 ns   ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[4]           ; Clock    ;
+; N/A   ; None         ; 5.087 ns   ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[5]           ; Clock    ;
+; N/A   ; None         ; 5.087 ns   ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[2]           ; Clock    ;
+; N/A   ; None         ; 5.087 ns   ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[3]           ; Clock    ;
+; N/A   ; None         ; 5.087 ns   ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[1]           ; Clock    ;
+; N/A   ; None         ; 5.031 ns   ; Input[7] ; instructionSetOperation:part3|register:ARegister|out[7]           ; Clock    ;
+; N/A   ; None         ; 5.019 ns   ; Aload    ; instructionSetOperation:part3|register:ARegister|out[0]           ; Clock    ;
+; N/A   ; None         ; 5.019 ns   ; Aload    ; instructionSetOperation:part3|register:ARegister|out[6]           ; Clock    ;
+; N/A   ; None         ; 5.019 ns   ; Aload    ; instructionSetOperation:part3|register:ARegister|out[4]           ; Clock    ;
+; N/A   ; None         ; 5.019 ns   ; Aload    ; instructionSetOperation:part3|register:ARegister|out[5]           ; Clock    ;
+; N/A   ; None         ; 5.019 ns   ; Aload    ; instructionSetOperation:part3|register:ARegister|out[2]           ; Clock    ;
+; N/A   ; None         ; 5.019 ns   ; Aload    ; instructionSetOperation:part3|register:ARegister|out[3]           ; Clock    ;
+; N/A   ; None         ; 5.019 ns   ; Aload    ; instructionSetOperation:part3|register:ARegister|out[1]           ; Clock    ;
+; N/A   ; None         ; 4.809 ns   ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[7]           ; Clock    ;
+; N/A   ; None         ; 4.400 ns   ; PCload   ; instructionCycleOperation:part1|register:fiveBitsRegister|out[0]  ; Clock    ;
+; N/A   ; None         ; 4.400 ns   ; PCload   ; instructionCycleOperation:part1|register:fiveBitsRegister|out[1]  ; Clock    ;
+; N/A   ; None         ; 4.400 ns   ; PCload   ; instructionCycleOperation:part1|register:fiveBitsRegister|out[2]  ; Clock    ;
+; N/A   ; None         ; 4.400 ns   ; PCload   ; instructionCycleOperation:part1|register:fiveBitsRegister|out[3]  ; Clock    ;
+; N/A   ; None         ; 4.400 ns   ; PCload   ; instructionCycleOperation:part1|register:fiveBitsRegister|out[4]  ; Clock    ;
+; N/A   ; None         ; 4.373 ns   ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[7]           ; Clock    ;
+; N/A   ; None         ; 4.345 ns   ; JMPmux   ; instructionCycleOperation:part1|register:fiveBitsRegister|out[0]  ; Clock    ;
+; N/A   ; None         ; 4.345 ns   ; JMPmux   ; instructionCycleOperation:part1|register:fiveBitsRegister|out[1]  ; Clock    ;
+; N/A   ; None         ; 4.345 ns   ; JMPmux   ; instructionCycleOperation:part1|register:fiveBitsRegister|out[2]  ; Clock    ;
+; N/A   ; None         ; 4.345 ns   ; JMPmux   ; instructionCycleOperation:part1|register:fiveBitsRegister|out[3]  ; Clock    ;
+; N/A   ; None         ; 4.345 ns   ; JMPmux   ; instructionCycleOperation:part1|register:fiveBitsRegister|out[4]  ; Clock    ;
+; N/A   ; None         ; 4.295 ns   ; Input[6] ; instructionSetOperation:part3|register:ARegister|out[6]           ; Clock    ;
+; N/A   ; None         ; 4.289 ns   ; Input[1] ; instructionSetOperation:part3|register:ARegister|out[1]           ; Clock    ;
+; N/A   ; None         ; 4.277 ns   ; IRload   ; instructionCycleOperation:part1|register:eightBitsRegister|out[0] ; Clock    ;
+; N/A   ; None         ; 4.277 ns   ; IRload   ; instructionCycleOperation:part1|register:eightBitsRegister|out[1] ; Clock    ;
+; N/A   ; None         ; 4.277 ns   ; IRload   ; instructionCycleOperation:part1|register:eightBitsRegister|out[2] ; Clock    ;
+; N/A   ; None         ; 4.277 ns   ; IRload   ; instructionCycleOperation:part1|register:eightBitsRegister|out[3] ; Clock    ;
+; N/A   ; None         ; 4.277 ns   ; IRload   ; instructionCycleOperation:part1|register:eightBitsRegister|out[4] ; Clock    ;
+; N/A   ; None         ; 4.277 ns   ; IRload   ; instructionCycleOperation:part1|register:eightBitsRegister|out[5] ; Clock    ;
+; N/A   ; None         ; 4.277 ns   ; IRload   ; instructionCycleOperation:part1|register:eightBitsRegister|out[6] ; Clock    ;
+; N/A   ; None         ; 4.277 ns   ; IRload   ; instructionCycleOperation:part1|register:eightBitsRegister|out[7] ; Clock    ;
+; N/A   ; None         ; 4.252 ns   ; Aload    ; instructionSetOperation:part3|register:ARegister|out[7]           ; Clock    ;
+; N/A   ; None         ; 4.196 ns   ; Input[3] ; instructionSetOperation:part3|register:ARegister|out[3]           ; Clock    ;
+; N/A   ; None         ; 4.179 ns   ; Input[2] ; instructionSetOperation:part3|register:ARegister|out[2]           ; Clock    ;
+; N/A   ; None         ; 3.975 ns   ; Input[5] ; instructionSetOperation:part3|register:ARegister|out[5]           ; Clock    ;
+; N/A   ; None         ; 3.860 ns   ; Input[4] ; instructionSetOperation:part3|register:ARegister|out[4]           ; Clock    ;
+; N/A   ; None         ; 3.779 ns   ; Input[0] ; instructionSetOperation:part3|register:ARegister|out[0]           ; Clock    ;
 +-------+--------------+------------+----------+-------------------------------------------------------------------+----------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------+
-; tco                                                                                                                            ;
-+-------+--------------+------------+-------------------------------------------------------------------+-----------+------------+
-; Slack ; Required tco ; Actual tco ; From                                                              ; To        ; From Clock ;
-+-------+--------------+------------+-------------------------------------------------------------------+-----------+------------+
-; N/A   ; None         ; 11.570 ns  ; instructionSetOperation:part3|register:ARegister|out[5]           ; Output[5] ; Clock      ;
-; N/A   ; None         ; 11.180 ns  ; instructionSetOperation:part3|register:ARegister|out[7]           ; Apos      ; Clock      ;
-; N/A   ; None         ; 11.030 ns  ; instructionSetOperation:part3|register:ARegister|out[5]           ; Aeq0      ; Clock      ;
-; N/A   ; None         ; 10.993 ns  ; instructionSetOperation:part3|register:ARegister|out[2]           ; Aeq0      ; Clock      ;
-; N/A   ; None         ; 10.981 ns  ; instructionSetOperation:part3|register:ARegister|out[1]           ; Aeq0      ; Clock      ;
-; N/A   ; None         ; 10.906 ns  ; instructionCycleOperation:part1|register:eightBitsRegister|out[5] ; IR[0]     ; Clock      ;
-; N/A   ; None         ; 10.890 ns  ; instructionSetOperation:part3|register:ARegister|out[7]           ; Aeq0      ; Clock      ;
-; N/A   ; None         ; 10.844 ns  ; instructionSetOperation:part3|register:ARegister|out[0]           ; Aeq0      ; Clock      ;
-; N/A   ; None         ; 10.782 ns  ; instructionSetOperation:part3|register:ARegister|out[6]           ; Aeq0      ; Clock      ;
-; N/A   ; None         ; 10.704 ns  ; instructionSetOperation:part3|register:ARegister|out[3]           ; Aeq0      ; Clock      ;
-; N/A   ; None         ; 10.502 ns  ; instructionSetOperation:part3|register:ARegister|out[4]           ; Aeq0      ; Clock      ;
-; N/A   ; None         ; 10.485 ns  ; instructionSetOperation:part3|register:ARegister|out[2]           ; Output[2] ; Clock      ;
-; N/A   ; None         ; 10.377 ns  ; instructionSetOperation:part3|register:ARegister|out[7]           ; Output[7] ; Clock      ;
-; N/A   ; None         ; 10.257 ns  ; instructionSetOperation:part3|register:ARegister|out[6]           ; Output[6] ; Clock      ;
-; N/A   ; None         ; 10.255 ns  ; instructionSetOperation:part3|register:ARegister|out[0]           ; Output[0] ; Clock      ;
-; N/A   ; None         ; 10.175 ns  ; instructionCycleOperation:part1|register:eightBitsRegister|out[6] ; IR[1]     ; Clock      ;
-; N/A   ; None         ; 9.795 ns   ; instructionSetOperation:part3|register:ARegister|out[1]           ; Output[1] ; Clock      ;
-; N/A   ; None         ; 9.290 ns   ; instructionCycleOperation:part1|register:eightBitsRegister|out[7] ; IR[2]     ; Clock      ;
-; N/A   ; None         ; 8.797 ns   ; instructionSetOperation:part3|register:ARegister|out[3]           ; Output[3] ; Clock      ;
-; N/A   ; None         ; 8.706 ns   ; instructionSetOperation:part3|register:ARegister|out[4]           ; Output[4] ; Clock      ;
-+-------+--------------+------------+-------------------------------------------------------------------+-----------+------------+
++---------------------------------------------------------------------------------------------------------------------------------+
+; tco                                                                                                                             ;
++-------+--------------+------------+-------------------------------------------------------------------+------------+------------+
+; Slack ; Required tco ; Actual tco ; From                                                              ; To         ; From Clock ;
++-------+--------------+------------+-------------------------------------------------------------------+------------+------------+
+; N/A   ; None         ; 9.746 ns   ; instructionSetOperation:part3|register:ARegister|out[6]           ; Output[6]  ; Clock      ;
+; N/A   ; None         ; 9.399 ns   ; instructionSetOperation:part3|register:ARegister|out[2]           ; Aeq0       ; Clock      ;
+; N/A   ; None         ; 9.370 ns   ; instructionSetOperation:part3|register:ARegister|out[3]           ; Aeq0       ; Clock      ;
+; N/A   ; None         ; 9.241 ns   ; instructionSetOperation:part3|register:ARegister|out[0]           ; Aeq0       ; Clock      ;
+; N/A   ; None         ; 9.080 ns   ; instructionSetOperation:part3|register:ARegister|out[1]           ; Aeq0       ; Clock      ;
+; N/A   ; None         ; 8.972 ns   ; instructionSetOperation:part3|register:ARegister|out[6]           ; Aeq0       ; Clock      ;
+; N/A   ; None         ; 8.957 ns   ; instructionSetOperation:part3|register:ARegister|out[7]           ; Aeq0       ; Clock      ;
+; N/A   ; None         ; 8.832 ns   ; instructionSetOperation:part3|register:ARegister|out[7]           ; Output[7]  ; Clock      ;
+; N/A   ; None         ; 8.832 ns   ; instructionSetOperation:part3|register:ARegister|out[7]           ; Apos       ; Clock      ;
+; N/A   ; None         ; 8.823 ns   ; instructionSetOperation:part3|register:ARegister|out[4]           ; Aeq0       ; Clock      ;
+; N/A   ; None         ; 8.747 ns   ; instructionCycleOperation:part1|register:fiveBitsRegister|out[0]  ; Address[0] ; Clock      ;
+; N/A   ; None         ; 8.731 ns   ; instructionCycleOperation:part1|register:fiveBitsRegister|out[1]  ; Address[1] ; Clock      ;
+; N/A   ; None         ; 8.720 ns   ; instructionCycleOperation:part1|register:fiveBitsRegister|out[2]  ; Address[2] ; Clock      ;
+; N/A   ; None         ; 8.710 ns   ; instructionCycleOperation:part1|register:fiveBitsRegister|out[4]  ; Address[4] ; Clock      ;
+; N/A   ; None         ; 8.669 ns   ; instructionSetOperation:part3|register:ARegister|out[5]           ; Aeq0       ; Clock      ;
+; N/A   ; None         ; 8.389 ns   ; instructionCycleOperation:part1|register:fiveBitsRegister|out[3]  ; Address[3] ; Clock      ;
+; N/A   ; None         ; 8.331 ns   ; instructionCycleOperation:part1|register:eightBitsRegister|out[6] ; IR[1]      ; Clock      ;
+; N/A   ; None         ; 8.223 ns   ; instructionSetOperation:part3|register:ARegister|out[4]           ; Output[4]  ; Clock      ;
+; N/A   ; None         ; 8.047 ns   ; instructionCycleOperation:part1|register:eightBitsRegister|out[0] ; Address[0] ; Clock      ;
+; N/A   ; None         ; 7.979 ns   ; instructionCycleOperation:part1|register:eightBitsRegister|out[3] ; Address[3] ; Clock      ;
+; N/A   ; None         ; 7.933 ns   ; instructionCycleOperation:part1|register:eightBitsRegister|out[1] ; Address[1] ; Clock      ;
+; N/A   ; None         ; 7.922 ns   ; instructionSetOperation:part3|register:ARegister|out[0]           ; Output[0]  ; Clock      ;
+; N/A   ; None         ; 7.866 ns   ; instructionSetOperation:part3|register:ARegister|out[2]           ; Output[2]  ; Clock      ;
+; N/A   ; None         ; 7.801 ns   ; instructionSetOperation:part3|register:ARegister|out[5]           ; Output[5]  ; Clock      ;
+; N/A   ; None         ; 7.708 ns   ; instructionCycleOperation:part1|register:eightBitsRegister|out[7] ; IR[2]      ; Clock      ;
+; N/A   ; None         ; 7.662 ns   ; instructionCycleOperation:part1|register:eightBitsRegister|out[2] ; Address[2] ; Clock      ;
+; N/A   ; None         ; 7.643 ns   ; instructionCycleOperation:part1|register:eightBitsRegister|out[4] ; Address[4] ; Clock      ;
+; N/A   ; None         ; 7.622 ns   ; instructionSetOperation:part3|register:ARegister|out[3]           ; Output[3]  ; Clock      ;
+; N/A   ; None         ; 7.619 ns   ; instructionSetOperation:part3|register:ARegister|out[1]           ; Output[1]  ; Clock      ;
+; N/A   ; None         ; 7.356 ns   ; instructionCycleOperation:part1|register:eightBitsRegister|out[5] ; IR[0]      ; Clock      ;
++-------+--------------+------------+-------------------------------------------------------------------+------------+------------+
+
+
++--------------------------------------------------------------------+
+; tpd                                                                ;
++-------+-------------------+-----------------+---------+------------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From    ; To         ;
++-------+-------------------+-----------------+---------+------------+
+; N/A   ; None              ; 11.486 ns       ; Meminst ; Address[3] ;
+; N/A   ; None              ; 11.214 ns       ; Meminst ; Address[0] ;
+; N/A   ; None              ; 11.174 ns       ; Meminst ; Address[2] ;
+; N/A   ; None              ; 11.151 ns       ; Meminst ; Address[4] ;
+; N/A   ; None              ; 11.092 ns       ; Meminst ; Address[1] ;
++-------+-------------------+-----------------+---------+------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
@@ -192,41 +321,63 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------+-------------+-----------+----------+-------------------------------------------------------------------+----------+
 ; Minimum Slack ; Required th ; Actual th ; From     ; To                                                                ; To Clock ;
 +---------------+-------------+-----------+----------+-------------------------------------------------------------------+----------+
-; N/A           ; None        ; -3.338 ns ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[7]           ; Clock    ;
-; N/A           ; None        ; -3.342 ns ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[0]           ; Clock    ;
-; N/A           ; None        ; -3.344 ns ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[2]           ; Clock    ;
-; N/A           ; None        ; -3.347 ns ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[4]           ; Clock    ;
-; N/A           ; None        ; -3.348 ns ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[5]           ; Clock    ;
-; N/A           ; None        ; -3.349 ns ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[6]           ; Clock    ;
-; N/A           ; None        ; -3.350 ns ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[3]           ; Clock    ;
-; N/A           ; None        ; -3.350 ns ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[1]           ; Clock    ;
-; N/A           ; None        ; -3.446 ns ; Input[2] ; instructionSetOperation:part3|register:ARegister|out[2]           ; Clock    ;
-; N/A           ; None        ; -3.461 ns ; Input[1] ; instructionSetOperation:part3|register:ARegister|out[1]           ; Clock    ;
-; N/A           ; None        ; -3.462 ns ; Input[5] ; instructionSetOperation:part3|register:ARegister|out[5]           ; Clock    ;
-; N/A           ; None        ; -3.468 ns ; Input[4] ; instructionSetOperation:part3|register:ARegister|out[4]           ; Clock    ;
-; N/A           ; None        ; -3.486 ns ; Input[7] ; instructionSetOperation:part3|register:ARegister|out[7]           ; Clock    ;
-; N/A           ; None        ; -3.574 ns ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[6]           ; Clock    ;
-; N/A           ; None        ; -3.574 ns ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[3]           ; Clock    ;
-; N/A           ; None        ; -3.574 ns ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[1]           ; Clock    ;
-; N/A           ; None        ; -3.574 ns ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[0]           ; Clock    ;
-; N/A           ; None        ; -3.576 ns ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[2]           ; Clock    ;
-; N/A           ; None        ; -3.577 ns ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[7]           ; Clock    ;
-; N/A           ; None        ; -3.744 ns ; Input[0] ; instructionSetOperation:part3|register:ARegister|out[0]           ; Clock    ;
-; N/A           ; None        ; -3.765 ns ; Input[6] ; instructionSetOperation:part3|register:ARegister|out[6]           ; Clock    ;
-; N/A           ; None        ; -3.810 ns ; Input[3] ; instructionSetOperation:part3|register:ARegister|out[3]           ; Clock    ;
-; N/A           ; None        ; -3.828 ns ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[5]           ; Clock    ;
-; N/A           ; None        ; -3.828 ns ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[4]           ; Clock    ;
-; N/A           ; None        ; -3.891 ns ; Aload    ; instructionSetOperation:part3|register:ARegister|out[7]           ; Clock    ;
-; N/A           ; None        ; -3.891 ns ; Aload    ; instructionSetOperation:part3|register:ARegister|out[6]           ; Clock    ;
-; N/A           ; None        ; -3.891 ns ; Aload    ; instructionSetOperation:part3|register:ARegister|out[5]           ; Clock    ;
-; N/A           ; None        ; -3.891 ns ; Aload    ; instructionSetOperation:part3|register:ARegister|out[4]           ; Clock    ;
-; N/A           ; None        ; -3.891 ns ; Aload    ; instructionSetOperation:part3|register:ARegister|out[3]           ; Clock    ;
-; N/A           ; None        ; -3.891 ns ; Aload    ; instructionSetOperation:part3|register:ARegister|out[2]           ; Clock    ;
-; N/A           ; None        ; -3.891 ns ; Aload    ; instructionSetOperation:part3|register:ARegister|out[1]           ; Clock    ;
-; N/A           ; None        ; -3.891 ns ; Aload    ; instructionSetOperation:part3|register:ARegister|out[0]           ; Clock    ;
-; N/A           ; None        ; -3.922 ns ; IRload   ; instructionCycleOperation:part1|register:eightBitsRegister|out[5] ; Clock    ;
-; N/A           ; None        ; -3.922 ns ; IRload   ; instructionCycleOperation:part1|register:eightBitsRegister|out[6] ; Clock    ;
-; N/A           ; None        ; -3.922 ns ; IRload   ; instructionCycleOperation:part1|register:eightBitsRegister|out[7] ; Clock    ;
+; N/A           ; None        ; -3.531 ns ; Input[0] ; instructionSetOperation:part3|register:ARegister|out[0]           ; Clock    ;
+; N/A           ; None        ; -3.572 ns ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[6]           ; Clock    ;
+; N/A           ; None        ; -3.573 ns ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[1]           ; Clock    ;
+; N/A           ; None        ; -3.575 ns ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[5]           ; Clock    ;
+; N/A           ; None        ; -3.577 ns ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[2]           ; Clock    ;
+; N/A           ; None        ; -3.612 ns ; Input[4] ; instructionSetOperation:part3|register:ARegister|out[4]           ; Clock    ;
+; N/A           ; None        ; -3.727 ns ; Input[5] ; instructionSetOperation:part3|register:ARegister|out[5]           ; Clock    ;
+; N/A           ; None        ; -3.875 ns ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[2]           ; Clock    ;
+; N/A           ; None        ; -3.878 ns ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[0]           ; Clock    ;
+; N/A           ; None        ; -3.880 ns ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[3]           ; Clock    ;
+; N/A           ; None        ; -3.884 ns ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[4]           ; Clock    ;
+; N/A           ; None        ; -3.886 ns ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[6]           ; Clock    ;
+; N/A           ; None        ; -3.886 ns ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[1]           ; Clock    ;
+; N/A           ; None        ; -3.923 ns ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[4]           ; Clock    ;
+; N/A           ; None        ; -3.929 ns ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[0]           ; Clock    ;
+; N/A           ; None        ; -3.931 ns ; Input[2] ; instructionSetOperation:part3|register:ARegister|out[2]           ; Clock    ;
+; N/A           ; None        ; -3.948 ns ; Input[3] ; instructionSetOperation:part3|register:ARegister|out[3]           ; Clock    ;
+; N/A           ; None        ; -3.961 ns ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[3]           ; Clock    ;
+; N/A           ; None        ; -4.004 ns ; Aload    ; instructionSetOperation:part3|register:ARegister|out[7]           ; Clock    ;
+; N/A           ; None        ; -4.024 ns ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[5]           ; Clock    ;
+; N/A           ; None        ; -4.029 ns ; IRload   ; instructionCycleOperation:part1|register:eightBitsRegister|out[0] ; Clock    ;
+; N/A           ; None        ; -4.029 ns ; IRload   ; instructionCycleOperation:part1|register:eightBitsRegister|out[1] ; Clock    ;
+; N/A           ; None        ; -4.029 ns ; IRload   ; instructionCycleOperation:part1|register:eightBitsRegister|out[2] ; Clock    ;
+; N/A           ; None        ; -4.029 ns ; IRload   ; instructionCycleOperation:part1|register:eightBitsRegister|out[3] ; Clock    ;
+; N/A           ; None        ; -4.029 ns ; IRload   ; instructionCycleOperation:part1|register:eightBitsRegister|out[4] ; Clock    ;
+; N/A           ; None        ; -4.029 ns ; IRload   ; instructionCycleOperation:part1|register:eightBitsRegister|out[5] ; Clock    ;
+; N/A           ; None        ; -4.029 ns ; IRload   ; instructionCycleOperation:part1|register:eightBitsRegister|out[6] ; Clock    ;
+; N/A           ; None        ; -4.029 ns ; IRload   ; instructionCycleOperation:part1|register:eightBitsRegister|out[7] ; Clock    ;
+; N/A           ; None        ; -4.041 ns ; Input[1] ; instructionSetOperation:part3|register:ARegister|out[1]           ; Clock    ;
+; N/A           ; None        ; -4.047 ns ; Input[6] ; instructionSetOperation:part3|register:ARegister|out[6]           ; Clock    ;
+; N/A           ; None        ; -4.097 ns ; JMPmux   ; instructionCycleOperation:part1|register:fiveBitsRegister|out[0]  ; Clock    ;
+; N/A           ; None        ; -4.097 ns ; JMPmux   ; instructionCycleOperation:part1|register:fiveBitsRegister|out[1]  ; Clock    ;
+; N/A           ; None        ; -4.097 ns ; JMPmux   ; instructionCycleOperation:part1|register:fiveBitsRegister|out[2]  ; Clock    ;
+; N/A           ; None        ; -4.097 ns ; JMPmux   ; instructionCycleOperation:part1|register:fiveBitsRegister|out[3]  ; Clock    ;
+; N/A           ; None        ; -4.097 ns ; JMPmux   ; instructionCycleOperation:part1|register:fiveBitsRegister|out[4]  ; Clock    ;
+; N/A           ; None        ; -4.125 ns ; Asel[1]  ; instructionSetOperation:part3|register:ARegister|out[7]           ; Clock    ;
+; N/A           ; None        ; -4.152 ns ; PCload   ; instructionCycleOperation:part1|register:fiveBitsRegister|out[0]  ; Clock    ;
+; N/A           ; None        ; -4.152 ns ; PCload   ; instructionCycleOperation:part1|register:fiveBitsRegister|out[1]  ; Clock    ;
+; N/A           ; None        ; -4.152 ns ; PCload   ; instructionCycleOperation:part1|register:fiveBitsRegister|out[2]  ; Clock    ;
+; N/A           ; None        ; -4.152 ns ; PCload   ; instructionCycleOperation:part1|register:fiveBitsRegister|out[3]  ; Clock    ;
+; N/A           ; None        ; -4.152 ns ; PCload   ; instructionCycleOperation:part1|register:fiveBitsRegister|out[4]  ; Clock    ;
+; N/A           ; None        ; -4.561 ns ; Asel[0]  ; instructionSetOperation:part3|register:ARegister|out[7]           ; Clock    ;
+; N/A           ; None        ; -4.771 ns ; Aload    ; instructionSetOperation:part3|register:ARegister|out[0]           ; Clock    ;
+; N/A           ; None        ; -4.771 ns ; Aload    ; instructionSetOperation:part3|register:ARegister|out[6]           ; Clock    ;
+; N/A           ; None        ; -4.771 ns ; Aload    ; instructionSetOperation:part3|register:ARegister|out[4]           ; Clock    ;
+; N/A           ; None        ; -4.771 ns ; Aload    ; instructionSetOperation:part3|register:ARegister|out[5]           ; Clock    ;
+; N/A           ; None        ; -4.771 ns ; Aload    ; instructionSetOperation:part3|register:ARegister|out[2]           ; Clock    ;
+; N/A           ; None        ; -4.771 ns ; Aload    ; instructionSetOperation:part3|register:ARegister|out[3]           ; Clock    ;
+; N/A           ; None        ; -4.771 ns ; Aload    ; instructionSetOperation:part3|register:ARegister|out[1]           ; Clock    ;
+; N/A           ; None        ; -4.783 ns ; Input[7] ; instructionSetOperation:part3|register:ARegister|out[7]           ; Clock    ;
+; N/A           ; None        ; -5.379 ns ; Sub      ; instructionSetOperation:part3|register:ARegister|out[0]           ; Clock    ;
+; N/A           ; None        ; -5.379 ns ; Sub      ; instructionSetOperation:part3|register:ARegister|out[6]           ; Clock    ;
+; N/A           ; None        ; -5.379 ns ; Sub      ; instructionSetOperation:part3|register:ARegister|out[4]           ; Clock    ;
+; N/A           ; None        ; -5.379 ns ; Sub      ; instructionSetOperation:part3|register:ARegister|out[5]           ; Clock    ;
+; N/A           ; None        ; -5.379 ns ; Sub      ; instructionSetOperation:part3|register:ARegister|out[2]           ; Clock    ;
+; N/A           ; None        ; -5.379 ns ; Sub      ; instructionSetOperation:part3|register:ARegister|out[3]           ; Clock    ;
+; N/A           ; None        ; -5.379 ns ; Sub      ; instructionSetOperation:part3|register:ARegister|out[1]           ; Clock    ;
 +---------------+-------------+-----------+----------+-------------------------------------------------------------------+----------+
 
 
@@ -236,76 +387,85 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II Classic Timing Analyzer
     Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
-    Info: Processing started: Tue Dec 08 18:20:04 2015
+    Info: Processing started: Tue Dec 15 16:56:58 2015
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off dataPath -c dataPath --timing_analysis_only
 Warning: Found pins functioning as undefined clocks and/or memory enables
     Info: Assuming node "Clock" is an undefined clock
-Info: Clock "Clock" Internal fmax is restricted to 380.08 MHz between source register "instructionSetOperation:part3|register:ARegister|out[6]" and destination register "instructionCycleOperation:part1|register:eightBitsRegister|out[6]"
-    Info: fmax restricted to clock pin edge rate 2.631 ns. Expand message to see actual delay path.
-        Info: + Longest register to register delay is 0.647 ns
-            Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X47_Y4_N27; Fanout = 3; REG Node = 'instructionSetOperation:part3|register:ARegister|out[6]'
-            Info: 2: + IC(0.373 ns) + CELL(0.178 ns) = 0.551 ns; Loc. = LCCOMB_X47_Y4_N16; Fanout = 1; COMB Node = 'instructionCycleOperation:part1|register:eightBitsRegister|out[6]~feeder'
-            Info: 3: + IC(0.000 ns) + CELL(0.096 ns) = 0.647 ns; Loc. = LCFF_X47_Y4_N17; Fanout = 1; REG Node = 'instructionCycleOperation:part1|register:eightBitsRegister|out[6]'
-            Info: Total cell delay = 0.274 ns ( 42.35 % )
-            Info: Total interconnect delay = 0.373 ns ( 57.65 % )
-        Info: - Smallest clock skew is 0.000 ns
-            Info: + Shortest clock path from clock "Clock" to destination register is 2.864 ns
-                Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_M1; Fanout = 1; CLK Node = 'Clock'
-                Info: 2: + IC(0.238 ns) + CELL(0.000 ns) = 1.264 ns; Loc. = CLKCTRL_G3; Fanout = 11; COMB Node = 'Clock~clkctrl'
-                Info: 3: + IC(0.998 ns) + CELL(0.602 ns) = 2.864 ns; Loc. = LCFF_X47_Y4_N17; Fanout = 1; REG Node = 'instructionCycleOperation:part1|register:eightBitsRegister|out[6]'
-                Info: Total cell delay = 1.628 ns ( 56.84 % )
-                Info: Total interconnect delay = 1.236 ns ( 43.16 % )
-            Info: - Longest clock path from clock "Clock" to source register is 2.864 ns
-                Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_M1; Fanout = 1; CLK Node = 'Clock'
-                Info: 2: + IC(0.238 ns) + CELL(0.000 ns) = 1.264 ns; Loc. = CLKCTRL_G3; Fanout = 11; COMB Node = 'Clock~clkctrl'
-                Info: 3: + IC(0.998 ns) + CELL(0.602 ns) = 2.864 ns; Loc. = LCFF_X47_Y4_N27; Fanout = 3; REG Node = 'instructionSetOperation:part3|register:ARegister|out[6]'
-                Info: Total cell delay = 1.628 ns ( 56.84 % )
-                Info: Total interconnect delay = 1.236 ns ( 43.16 % )
-        Info: + Micro clock to output delay of source is 0.277 ns
-        Info: + Micro setup delay of destination is -0.038 ns
-Info: tsu for register "instructionCycleOperation:part1|register:eightBitsRegister|out[5]" (data pin = "IRload", clock pin = "Clock") is 4.170 ns
-    Info: + Longest pin to register delay is 7.072 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.894 ns) = 0.894 ns; Loc. = PIN_Y21; Fanout = 3; PIN Node = 'IRload'
-        Info: 2: + IC(5.420 ns) + CELL(0.758 ns) = 7.072 ns; Loc. = LCFF_X47_Y4_N7; Fanout = 1; REG Node = 'instructionCycleOperation:part1|register:eightBitsRegister|out[5]'
-        Info: Total cell delay = 1.652 ns ( 23.36 % )
-        Info: Total interconnect delay = 5.420 ns ( 76.64 % )
-    Info: + Micro setup delay of destination is -0.038 ns
-    Info: - Shortest clock path from clock "Clock" to destination register is 2.864 ns
-        Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_M1; Fanout = 1; CLK Node = 'Clock'
-        Info: 2: + IC(0.238 ns) + CELL(0.000 ns) = 1.264 ns; Loc. = CLKCTRL_G3; Fanout = 11; COMB Node = 'Clock~clkctrl'
-        Info: 3: + IC(0.998 ns) + CELL(0.602 ns) = 2.864 ns; Loc. = LCFF_X47_Y4_N7; Fanout = 1; REG Node = 'instructionCycleOperation:part1|register:eightBitsRegister|out[5]'
-        Info: Total cell delay = 1.628 ns ( 56.84 % )
-        Info: Total interconnect delay = 1.236 ns ( 43.16 % )
-Info: tco from clock "Clock" to destination pin "Output[5]" through register "instructionSetOperation:part3|register:ARegister|out[5]" is 11.570 ns
-    Info: + Longest clock path from clock "Clock" to source register is 2.864 ns
-        Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_M1; Fanout = 1; CLK Node = 'Clock'
-        Info: 2: + IC(0.238 ns) + CELL(0.000 ns) = 1.264 ns; Loc. = CLKCTRL_G3; Fanout = 11; COMB Node = 'Clock~clkctrl'
-        Info: 3: + IC(0.998 ns) + CELL(0.602 ns) = 2.864 ns; Loc. = LCFF_X47_Y4_N29; Fanout = 3; REG Node = 'instructionSetOperation:part3|register:ARegister|out[5]'
-        Info: Total cell delay = 1.628 ns ( 56.84 % )
-        Info: Total interconnect delay = 1.236 ns ( 43.16 % )
+Info: Clock "Clock" has Internal fmax of 311.92 MHz between source register "instructionSetOperation:part3|register:ARegister|out[6]" and destination register "instructionSetOperation:part3|register:ARegister|out[0]" (period= 3.206 ns)
+    Info: + Longest register to register delay is 2.967 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X39_Y8_N11; Fanout = 3; REG Node = 'instructionSetOperation:part3|register:ARegister|out[6]'
+        Info: 2: + IC(0.386 ns) + CELL(0.455 ns) = 0.841 ns; Loc. = LCCOMB_X39_Y8_N16; Fanout = 2; COMB Node = 'instructionSetOperation:part3|Equal0~0'
+        Info: 3: + IC(0.314 ns) + CELL(0.322 ns) = 1.477 ns; Loc. = LCCOMB_X39_Y8_N0; Fanout = 1; COMB Node = 'instructionSetOperation:part3|register:ARegister|out[6]~2'
+        Info: 4: + IC(0.288 ns) + CELL(0.178 ns) = 1.943 ns; Loc. = LCCOMB_X39_Y8_N18; Fanout = 7; COMB Node = 'instructionSetOperation:part3|register:ARegister|out[6]~3'
+        Info: 5: + IC(0.266 ns) + CELL(0.758 ns) = 2.967 ns; Loc. = LCFF_X39_Y8_N25; Fanout = 3; REG Node = 'instructionSetOperation:part3|register:ARegister|out[0]'
+        Info: Total cell delay = 1.713 ns ( 57.74 % )
+        Info: Total interconnect delay = 1.254 ns ( 42.26 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "Clock" to destination register is 2.843 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_M1; Fanout = 1; CLK Node = 'Clock'
+            Info: 2: + IC(0.238 ns) + CELL(0.000 ns) = 1.264 ns; Loc. = CLKCTRL_G3; Fanout = 21; COMB Node = 'Clock~clkctrl'
+            Info: 3: + IC(0.977 ns) + CELL(0.602 ns) = 2.843 ns; Loc. = LCFF_X39_Y8_N25; Fanout = 3; REG Node = 'instructionSetOperation:part3|register:ARegister|out[0]'
+            Info: Total cell delay = 1.628 ns ( 57.26 % )
+            Info: Total interconnect delay = 1.215 ns ( 42.74 % )
+        Info: - Longest clock path from clock "Clock" to source register is 2.843 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_M1; Fanout = 1; CLK Node = 'Clock'
+            Info: 2: + IC(0.238 ns) + CELL(0.000 ns) = 1.264 ns; Loc. = CLKCTRL_G3; Fanout = 21; COMB Node = 'Clock~clkctrl'
+            Info: 3: + IC(0.977 ns) + CELL(0.602 ns) = 2.843 ns; Loc. = LCFF_X39_Y8_N11; Fanout = 3; REG Node = 'instructionSetOperation:part3|register:ARegister|out[6]'
+            Info: Total cell delay = 1.628 ns ( 57.26 % )
+            Info: Total interconnect delay = 1.215 ns ( 42.74 % )
     Info: + Micro clock to output delay of source is 0.277 ns
-    Info: + Longest register to pin delay is 8.429 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X47_Y4_N29; Fanout = 3; REG Node = 'instructionSetOperation:part3|register:ARegister|out[5]'
-        Info: 2: + IC(5.609 ns) + CELL(2.820 ns) = 8.429 ns; Loc. = PIN_L8; Fanout = 0; PIN Node = 'Output[5]'
-        Info: Total cell delay = 2.820 ns ( 33.46 % )
-        Info: Total interconnect delay = 5.609 ns ( 66.54 % )
-Info: th for register "instructionSetOperation:part3|register:ARegister|out[7]" (data pin = "Asel[0]", clock pin = "Clock") is -3.338 ns
-    Info: + Longest clock path from clock "Clock" to destination register is 2.864 ns
+    Info: + Micro setup delay of destination is -0.038 ns
+Info: tsu for register "instructionSetOperation:part3|register:ARegister|out[0]" (data pin = "Sub", clock pin = "Clock") is 5.627 ns
+    Info: + Longest pin to register delay is 8.508 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.894 ns) = 0.894 ns; Loc. = PIN_Y21; Fanout = 1; PIN Node = 'Sub'
+        Info: 2: + IC(5.633 ns) + CELL(0.491 ns) = 7.018 ns; Loc. = LCCOMB_X39_Y8_N0; Fanout = 1; COMB Node = 'instructionSetOperation:part3|register:ARegister|out[6]~2'
+        Info: 3: + IC(0.288 ns) + CELL(0.178 ns) = 7.484 ns; Loc. = LCCOMB_X39_Y8_N18; Fanout = 7; COMB Node = 'instructionSetOperation:part3|register:ARegister|out[6]~3'
+        Info: 4: + IC(0.266 ns) + CELL(0.758 ns) = 8.508 ns; Loc. = LCFF_X39_Y8_N25; Fanout = 3; REG Node = 'instructionSetOperation:part3|register:ARegister|out[0]'
+        Info: Total cell delay = 2.321 ns ( 27.28 % )
+        Info: Total interconnect delay = 6.187 ns ( 72.72 % )
+    Info: + Micro setup delay of destination is -0.038 ns
+    Info: - Shortest clock path from clock "Clock" to destination register is 2.843 ns
         Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_M1; Fanout = 1; CLK Node = 'Clock'
-        Info: 2: + IC(0.238 ns) + CELL(0.000 ns) = 1.264 ns; Loc. = CLKCTRL_G3; Fanout = 11; COMB Node = 'Clock~clkctrl'
-        Info: 3: + IC(0.998 ns) + CELL(0.602 ns) = 2.864 ns; Loc. = LCFF_X47_Y4_N1; Fanout = 4; REG Node = 'instructionSetOperation:part3|register:ARegister|out[7]'
-        Info: Total cell delay = 1.628 ns ( 56.84 % )
-        Info: Total interconnect delay = 1.236 ns ( 43.16 % )
+        Info: 2: + IC(0.238 ns) + CELL(0.000 ns) = 1.264 ns; Loc. = CLKCTRL_G3; Fanout = 21; COMB Node = 'Clock~clkctrl'
+        Info: 3: + IC(0.977 ns) + CELL(0.602 ns) = 2.843 ns; Loc. = LCFF_X39_Y8_N25; Fanout = 3; REG Node = 'instructionSetOperation:part3|register:ARegister|out[0]'
+        Info: Total cell delay = 1.628 ns ( 57.26 % )
+        Info: Total interconnect delay = 1.215 ns ( 42.74 % )
+Info: tco from clock "Clock" to destination pin "Output[6]" through register "instructionSetOperation:part3|register:ARegister|out[6]" is 9.746 ns
+    Info: + Longest clock path from clock "Clock" to source register is 2.843 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_M1; Fanout = 1; CLK Node = 'Clock'
+        Info: 2: + IC(0.238 ns) + CELL(0.000 ns) = 1.264 ns; Loc. = CLKCTRL_G3; Fanout = 21; COMB Node = 'Clock~clkctrl'
+        Info: 3: + IC(0.977 ns) + CELL(0.602 ns) = 2.843 ns; Loc. = LCFF_X39_Y8_N11; Fanout = 3; REG Node = 'instructionSetOperation:part3|register:ARegister|out[6]'
+        Info: Total cell delay = 1.628 ns ( 57.26 % )
+        Info: Total interconnect delay = 1.215 ns ( 42.74 % )
+    Info: + Micro clock to output delay of source is 0.277 ns
+    Info: + Longest register to pin delay is 6.626 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X39_Y8_N11; Fanout = 3; REG Node = 'instructionSetOperation:part3|register:ARegister|out[6]'
+        Info: 2: + IC(3.620 ns) + CELL(3.006 ns) = 6.626 ns; Loc. = PIN_AB9; Fanout = 0; PIN Node = 'Output[6]'
+        Info: Total cell delay = 3.006 ns ( 45.37 % )
+        Info: Total interconnect delay = 3.620 ns ( 54.63 % )
+Info: Longest tpd from source pin "Meminst" to destination pin "Address[3]" is 11.486 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.834 ns) = 0.834 ns; Loc. = PIN_M6; Fanout = 5; PIN Node = 'Meminst'
+    Info: 2: + IC(5.651 ns) + CELL(0.521 ns) = 7.006 ns; Loc. = LCCOMB_X12_Y10_N22; Fanout = 1; COMB Node = 'instructionCycleOperation:part1|multiplexer:Meminst_mux|Output[3]~3'
+    Info: 3: + IC(1.670 ns) + CELL(2.810 ns) = 11.486 ns; Loc. = PIN_N6; Fanout = 0; PIN Node = 'Address[3]'
+    Info: Total cell delay = 4.165 ns ( 36.26 % )
+    Info: Total interconnect delay = 7.321 ns ( 63.74 % )
+Info: th for register "instructionSetOperation:part3|register:ARegister|out[0]" (data pin = "Input[0]", clock pin = "Clock") is -3.531 ns
+    Info: + Longest clock path from clock "Clock" to destination register is 2.843 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_M1; Fanout = 1; CLK Node = 'Clock'
+        Info: 2: + IC(0.238 ns) + CELL(0.000 ns) = 1.264 ns; Loc. = CLKCTRL_G3; Fanout = 21; COMB Node = 'Clock~clkctrl'
+        Info: 3: + IC(0.977 ns) + CELL(0.602 ns) = 2.843 ns; Loc. = LCFF_X39_Y8_N25; Fanout = 3; REG Node = 'instructionSetOperation:part3|register:ARegister|out[0]'
+        Info: Total cell delay = 1.628 ns ( 57.26 % )
+        Info: Total interconnect delay = 1.215 ns ( 42.74 % )
     Info: + Micro hold delay of destination is 0.286 ns
-    Info: - Shortest pin to register delay is 6.488 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.884 ns) = 0.884 ns; Loc. = PIN_W21; Fanout = 8; PIN Node = 'Asel[0]'
-        Info: 2: + IC(5.186 ns) + CELL(0.322 ns) = 6.392 ns; Loc. = LCCOMB_X47_Y4_N0; Fanout = 1; COMB Node = 'instructionSetOperation:part3|multiplexer:Asel_mux2|Output[7]~0'
-        Info: 3: + IC(0.000 ns) + CELL(0.096 ns) = 6.488 ns; Loc. = LCFF_X47_Y4_N1; Fanout = 4; REG Node = 'instructionSetOperation:part3|register:ARegister|out[7]'
-        Info: Total cell delay = 1.302 ns ( 20.07 % )
-        Info: Total interconnect delay = 5.186 ns ( 79.93 % )
+    Info: - Shortest pin to register delay is 6.660 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.844 ns) = 0.844 ns; Loc. = PIN_R18; Fanout = 1; PIN Node = 'Input[0]'
+        Info: 2: + IC(5.542 ns) + CELL(0.178 ns) = 6.564 ns; Loc. = LCCOMB_X39_Y8_N24; Fanout = 1; COMB Node = 'instructionSetOperation:part3|multiplexer:Asel_mux2|Output[0]~6'
+        Info: 3: + IC(0.000 ns) + CELL(0.096 ns) = 6.660 ns; Loc. = LCFF_X39_Y8_N25; Fanout = 3; REG Node = 'instructionSetOperation:part3|register:ARegister|out[0]'
+        Info: Total cell delay = 1.118 ns ( 16.79 % )
+        Info: Total interconnect delay = 5.542 ns ( 83.21 % )
 Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 160 megabytes
-    Info: Processing ended: Tue Dec 08 18:20:04 2015
+    Info: Peak virtual memory: 157 megabytes
+    Info: Processing ended: Tue Dec 15 16:56:58 2015
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 

@@ -6,15 +6,17 @@ module instructionSetOperation_tb();
 	wire [7:0] Output;
 	
 	initial begin
-		Aload	= 0;
-		Reset	= 0;
+		Aload	= 1;
+		Reset	= 1;
 		Clock	= 0;
 		Sub		= 0;
 		Asel	= 2'b11;
-		Q		= 0;
-		Input	= 0;
-	#2	Reset 	= 1;
-	#2	Reset	= 0;
+		Q		= {$random}%256;
+		Input	= {$random}%256;
+	#2	Reset 	= 0;
+	#2	aselChanges();
+	#2	Sub = 1;
+	#2	aselChanges();
 	end	
 	always #1 Clock = ~Clock;
 	
@@ -22,8 +24,6 @@ module instructionSetOperation_tb();
 		$display("Aload	Reset	Sub	Asel	Input	Aeq0	Apos	Q	Output");
 		$monitor("%d	%d	%d	%d	%d	%d	%d	%d	%d",
 		Aload,Reset,Sub,Asel,Input,Aeq0,Apos,Q,Output);
-		aselChanges();
-		aselChanges();
 	end
 	
 	
@@ -34,8 +34,7 @@ module instructionSetOperation_tb();
 	task aselChanges; begin
 		while(Asel > 2'b00)
 			#2	Asel = Asel - 1;
-		#2	Asel = 2'b11;
-			Aload = ~Aload;
+		#2	Asel = 2'b10;
 		end
 	endtask
 endmodule 
