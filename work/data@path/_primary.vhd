@@ -11,6 +11,7 @@ entity dataPath is
         Reset           : in     vl_logic;
         Clock           : in     vl_logic;
         Sub             : in     vl_logic;
+        \In\            : in     vl_logic;
         Asel            : in     vl_logic_vector(1 downto 0);
         Input           : in     vl_logic_vector(7 downto 0);
         Aeq0            : out    vl_logic;

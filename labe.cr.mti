@@ -19,12 +19,26 @@ Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
 Top level modules:
 	multiplexer
 
-} {} {}} C:/Users/Student/Desktop/yen/dataPath/dataPath_tb.v {1 {vlog -work work -nocovercells C:/Users/Student/Desktop/yen/dataPath/dataPath_tb.v
+} {} {}} C:/Users/Student/Desktop/yen/dataPath/dataPath.v {1 {vlog -work work -nocovercells C:/Users/Student/Desktop/yen/dataPath/dataPath.v
 Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
--- Compiling module dataPath_tb
+-- Compiling module dataPath
 
 Top level modules:
-	dataPath_tb
+	dataPath
+
+} {} {}} C:/Users/Student/Desktop/yen/dataPath/memRam.v {1 {vlog -work work -nocovercells C:/Users/Student/Desktop/yen/dataPath/memRam.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module memRAM
+
+Top level modules:
+	memRAM
+
+} {} {}} C:/Users/Student/Desktop/yen/Lab2/Lab2_tb.v {1 {vlog -work work -nocovercells C:/Users/Student/Desktop/yen/Lab2/Lab2_tb.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module Lab2_tb
+
+Top level modules:
+	Lab2_tb
 
 } {} {}} C:/Users/Student/Desktop/yen/dataPath/increment.v {1 {vlog -work work -nocovercells C:/Users/Student/Desktop/yen/dataPath/increment.v
 Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009

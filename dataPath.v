@@ -1,5 +1,5 @@
 module dataPath(
-	input IRload,JMPmux, PCload, Meminst, MemWr, Aload, Reset, Clock, Sub,
+	input IRload,JMPmux, PCload, Meminst, MemWr, Aload, Reset, Clock, Sub,In,
 	input [1:0] Asel,
 	input [7:0] Input,
 	output Aeq0, Apos,
@@ -7,11 +7,9 @@ module dataPath(
 	output wire [2:0] IR,
 	output [7:0] Output, RAM_Q);
 	
-	//wire [7:0] RAM_Q;
-	//wire [4:0] Address;
 		
 	instructionCycleOperation 	part1(IRload,JMPmux,PCload,Meminst,Clock,Reset,RAM_Q,IR,Address);
-	memRAM						part2(Clock,Output,Address,MemWr,RAM_Q);
+	memRAM						part2(Clock,In,Output,Address,MemWr,RAM_Q);
 	instructionSetOperation		part3(Aload, Reset, Clock, Sub,Asel,Input,RAM_Q,Aeq0,Apos,Output);
 
 endmodule 

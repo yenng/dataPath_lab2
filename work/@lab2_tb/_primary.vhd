@@ -1,4 +1,4 @@
 library verilog;
 use verilog.vl_types.all;
-entity sub_tb is
-end sub_tb;
+entity Lab2_tb is
+end Lab2_tb;

@@ -8,7 +8,7 @@ module sub(
 		else begin
 		if(in1 > in2)
 			Out = in1 - in2;
-		else
+		else 
 			Out = in2 - in1;
 		end
 	end 
